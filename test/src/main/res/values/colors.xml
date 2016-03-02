@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="Primary">#ffffff</color>
+    <color name="PrimaryDark">#000000</color>
+    <color name="Focus">#868686</color>
+    <color name="StatusBar">#434343</color>
+
+</resources>
