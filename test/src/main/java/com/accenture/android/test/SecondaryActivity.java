@@ -1,11 +1,8 @@
 package com.accenture.android.test;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.accenture.android.framework.context.AcnActivity;
-import com.accenture.android.framework.view.AcnButton;
 import com.accenture.android.framework.view.AcnImageView;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
@@ -14,25 +11,17 @@ import com.squareup.otto.Subscribe;
 
 import butterknife.Bind;
 
-public class MainActivity extends AcnActivity {
+public class SecondaryActivity extends AcnActivity {
 
-    public MainActivity(){
-        super(R.layout.activity_main, R.id.toolbar, null, R.color.StatusBar);
+    public SecondaryActivity(){
+        super(R.layout.activity_secondary, R.id.toolbar, R.id.back_button, R.color.StatusBar);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);
-
-        acn_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondaryActivity.class);
-                startActivity(intent);
-            }
-        });
+        acn_imageview_zoomable.setImageFromURL("http://goo.gl/56MHKp", true);
 
     }
 
@@ -47,10 +36,7 @@ public class MainActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_imageview)
-    AcnImageView acn_imageview;
-
-    @Bind(R.id.acn_button)
-    AcnButton acn_button;
+    @Bind(R.id.acn_imageview_zoomable)
+    AcnImageView acn_imageview_zoomable;
 
 }

@@ -4,24 +4,30 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.accenture.android.framework.util.ActivityLevelInitializer;
 import com.accenture.android.framework.util.BusProvider;
+import com.accenture.android.framework.view.AcnButton;
+import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 
-import butterknife.ButterKnife;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by ugurcan.yildirim on 02.03.2016.
  */
-public class AcnActivity extends AppCompatActivity {
+public abstract class AcnActivity extends AppCompatActivity {
 
-    private int layoutRes, toolbarRes, statusbarColor;
+    private Integer layoutRes = null;
+    private Integer toolbarRes = null;
+    private Integer backButtonRes = null;
+    private Integer statusbarColor = null;
 
-    public AcnActivity(int layoutRes, int toolbarRes, int statusbarColor){
+    public AcnActivity(Integer layoutRes, Integer toolbarRes, Integer backButtonRes, Integer statusbarColor){
 
         this.layoutRes = layoutRes;
         this.toolbarRes = toolbarRes;
+        this.backButtonRes = backButtonRes;
         this.statusbarColor = statusbarColor;
 
     }
@@ -43,7 +49,20 @@ public class AcnActivity extends AppCompatActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(getResources().getColor(this.statusbarColor));
 
+        //BACK BUTTON ONCLICK
+        if(backButtonRes != null){
+            AcnButton back_button = (AcnButton) findViewById(backButtonRes);
+            back_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
     }
+
+    public abstract void internetCatcher(ConnectivityStatus connectivityStatus);
 
     @Override
     protected void onResume() {

@@ -10,7 +10,7 @@ import com.accenture.android.framework.util.Config;
 /**
  * Created by ugurcan.yildirim on 02.03.2016.
  */
-public class AcnApplication extends Application {
+public abstract class AcnApplication extends Application {
 
     public AcnApplication(String defaultFont, String loggerTag){
 
@@ -28,9 +28,10 @@ public class AcnApplication extends Application {
     private void init(){
 
         AppLevelInitializer.initLogger(Config.loggerTag);
+        AppLevelInitializer.initSharedPrefs(this);
         AppLevelInitializer.initIconify();
         AppLevelInitializer.initDefFont(Config.defaultFont);
-        AppLevelInitializer.initImageLoader(this);
+        AppLevelInitializer.initImageLoader(this, 300);
         AppLevelInitializer.initInternetListener(this);
 
     }

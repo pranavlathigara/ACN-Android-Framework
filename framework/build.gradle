@@ -22,6 +22,10 @@ android {
     }
 }
 
+repositories {
+    maven { url "http://dl.bintray.com/pixplicity/maven" }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
@@ -35,4 +39,7 @@ dependencies {
     compile 'com.github.orhanobut:logger:1.12'
     compile 'com.squareup:otto:1.3.8'
     compile 'com.github.pwittchen:reactivenetwork:0.2.0'
+    compile 'com.github.justzak:dilatingdotsprogressbar:1.0.1'
+    compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
+    compile 'com.commit451:PhotoView:1.2.4'
 }

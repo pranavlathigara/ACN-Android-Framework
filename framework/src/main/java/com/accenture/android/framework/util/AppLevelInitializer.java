@@ -1,6 +1,7 @@
 package com.accenture.android.framework.util;
 
 import android.app.Application;
+import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
@@ -13,6 +14,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.orhanobut.logger.Logger;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -38,6 +40,19 @@ public class AppLevelInitializer {
 
     }
 
+    public static void initSharedPrefs(final Application application) {
+
+        new Prefs.Builder()
+                .setContext(application)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(application.getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
+
+        Logger.i("Prefs is initialized!");
+
+    }
+
     public static void initIconify() {
 
         Iconify.with(new FontAwesomeModule());
@@ -60,10 +75,10 @@ public class AppLevelInitializer {
 
     }
 
-    public static void initImageLoader(final Application application) {
+    public static void initImageLoader(final Application application, int fadeInDuration) {
 
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .displayer(new FadeInBitmapDisplayer(300))
+                .displayer(new FadeInBitmapDisplayer(fadeInDuration))
                 .resetViewBeforeLoading(true)
                 .cacheOnDisk(true)
                 .cacheInMemory(true).build();
@@ -103,7 +118,8 @@ public class AppLevelInitializer {
                 .subscribe(new Action1<ConnectivityStatus>() {
                     @Override
                     public void call(ConnectivityStatus connectivityStatus) {
-                        Logger.i("Internet status: " + connectivityStatus.name());
+                        //POST CONNECTIVITY STATUS
+                        BusProvider.getInstance().post(connectivityStatus);
                     }
                 });
 
