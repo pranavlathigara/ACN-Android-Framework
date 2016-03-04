@@ -48,9 +48,9 @@ The following classes can be found under `view` package:
 - Can do anything that [FancyButton](https://github.com/medyo/Fancybuttons) does
 
 #### AcnTextView (extends IconTextView)
+- Can do anything that [IconTextView](https://github.com/JoanZapata/android-iconify) does
 - Allows to use [FontAwesome icons](http://fortawesome.github.io/Font-Awesome/icons/) inside text
     - `android:text="Hello world {fa-globe}"`
-- Can do anything that [IconTextView](https://github.com/JoanZapata/android-iconify) does
 
 #### AcnImageView (extends FrameLayout)
 - Includes the following UI components:
