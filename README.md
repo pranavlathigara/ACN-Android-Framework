@@ -1,7 +1,7 @@
 # AcnFramework – Android Framework
 AcnFramework is an Android framework developed to reduce the development effort by performing the initialization of many widely-used libraries inside its custom Application and Activity classes.
 
-It also provides several view classes with extra features added to default views of Android. See below for more details.
+It also provides custom view classes with extra features added to default views of Android. See below for more details.
 
 
 
@@ -34,7 +34,7 @@ The following classes can be found under `context` package:
     - `statusBarColor` (int)
         - e.g., `R.color.statusBar`
 - Initializes the following libraries:
-    - [ButterKnife](http://jakewharton.github.io/butterknife/)
+    - [Butter Knife](http://jakewharton.github.io/butterknife/)
 - Registers/unregisters [Otto Event Bus](http://square.github.io/otto/) at `onResume()`/`onPause()`
 - Includes abstract method `internetCatcher(ConnectivityStatus)`
     - While overriding, add `@Subscribe` before the method

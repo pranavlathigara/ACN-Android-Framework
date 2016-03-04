@@ -102,7 +102,7 @@ public class AcnImageView extends FrameLayout {
         this.setImage(imageAsset, zoomable, ImageType.ASSET);
     }
 
-    private <T> void  setImage(T imageRes, boolean zoomable, ImageType imageType){
+    private <T> void setImage(T imageRes, boolean zoomable, ImageType imageType){
 
         String image = "";
         if(imageType == ImageType.URL)
