@@ -85,12 +85,14 @@ The following classes can be found under `util` package:
 
 
 
-## Other notes
-- Inside module level `gradle` file, add the following line under `dependencies` tag:
+## How to use this framework
+1. Add `acnframework` module to your project
+2. Inside module-level `gradle` file, add the following line under `dependencies` tag:
     - `compile project(':acnframework')`
-- Inside project level `gradle` file, add the following line under `allprojects/repositories` tag:
+3. Inside project-level `gradle` file, add the following line under `allprojects/repositories` tag:
     - `maven { url "https://jitpack.io" }`
-- Inside `AndroidManifest.xml`, add the following lines under `Application` tag:
+4. Inside `AndroidManifest.xml`, add the following lines under `Application` tag:
     - `tools:replace="android:theme, android:name"`
     - `android:theme="@style/AcnTheme"`
 
+See `test` module for sample usage.
