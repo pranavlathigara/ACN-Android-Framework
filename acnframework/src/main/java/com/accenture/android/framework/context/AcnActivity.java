@@ -18,17 +18,17 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 public abstract class AcnActivity extends AppCompatActivity {
 
-    private Integer layoutRes = null;
-    private Integer toolbarRes = null;
+    private int layoutRes;
+    private int toolbarRes;
     private Integer backButtonRes = null;
-    private Integer statusbarColor = null;
+    private int statusBarColor;
 
-    public AcnActivity(Integer layoutRes, Integer toolbarRes, Integer backButtonRes, Integer statusbarColor){
+    public AcnActivity(int layoutRes, int toolbarRes, Integer backButtonRes, int statusBarColor){
 
         this.layoutRes = layoutRes;
         this.toolbarRes = toolbarRes;
         this.backButtonRes = backButtonRes;
-        this.statusbarColor = statusbarColor;
+        this.statusBarColor = statusBarColor;
 
     }
 
@@ -47,7 +47,7 @@ public abstract class AcnActivity extends AppCompatActivity {
 
         //CHANGE STATUS BAR COLOR
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            getWindow().setStatusBarColor(getResources().getColor(this.statusbarColor));
+            getWindow().setStatusBarColor(getResources().getColor(this.statusBarColor));
 
         //BACK BUTTON ONCLICK
         if(backButtonRes != null){

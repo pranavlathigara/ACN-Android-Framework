@@ -8,14 +8,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/framework" />
+            <option value="$PROJECT_DIR$/acnframework" />
             <option value="$PROJECT_DIR$/test" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/framework" />
+            <option value="$PROJECT_DIR$/acnframework" />
             <option value="$PROJECT_DIR$/test" />
           </set>
         </option>

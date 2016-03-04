@@ -5,6 +5,7 @@ import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
+import com.accenture.android.framework.util.BusProvider;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.github.pwittchen.reactivenetwork.library.ReactiveNetwork;
 import com.joanzapata.iconify.Iconify;
@@ -27,6 +28,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class AppLevelInitializer {
 
     public static void initLogger(String loggerTag) {
+
+        if(TextUtils.isEmpty(loggerTag))
+            return;
 
         Logger.init(loggerTag);              // default PRETTYLOGGER or use just init()
         /*      .methodCount(3)                 // default 2

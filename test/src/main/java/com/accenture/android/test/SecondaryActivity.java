@@ -14,7 +14,7 @@ import butterknife.Bind;
 public class SecondaryActivity extends AcnActivity {
 
     public SecondaryActivity(){
-        super(R.layout.activity_secondary, R.id.toolbar, R.id.back_button, R.color.StatusBar);
+        super(R.layout.activity_secondary, R.id.toolbar, R.id.back_button, R.color.statusBar);
     }
 
     @Override

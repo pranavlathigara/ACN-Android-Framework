@@ -14,7 +14,7 @@
         android:layout_height="60dp"
         android:id="@+id/toolbar"
         android:gravity="center"
-        android:background="@color/PrimaryDark">
+        android:background="@color/primaryDark">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -27,10 +27,10 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 fancy:fb_defaultColor="@android:color/transparent"
-                fancy:fb_focusColor="@color/Focus"
+                fancy:fb_focusColor="@color/focus"
                 fancy:fb_fontIconResource="&#xf060;"
                 fancy:fb_fontIconSize="25sp"
-                fancy:fb_textColor="@color/Primary"
+                fancy:fb_textColor="@color/primary"
                 android:id="@+id/back_button"/>
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/app_name"
-                android:textColor="@color/Primary"
+                android:textColor="@color/primary"
                 android:textSize="20sp" />
 
         </RelativeLayout>
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            app:dotColor="@color/PrimaryDark"
+            app:dotColor="@color/primaryDark"
             app:dotCount="4"
             app:dotRadius="10dp"
             android:gravity="center"

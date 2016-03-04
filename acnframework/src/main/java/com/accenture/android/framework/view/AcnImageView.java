@@ -22,6 +22,10 @@ import uk.co.senab.photoview.PhotoViewAttacher;
  */
 public class AcnImageView extends FrameLayout {
 
+    enum ImageType{
+        URL, DRAWABLE, ASSET
+    }
+
     private ImageView imageView;
     private DilatingDotsProgressBar loadingView;
 
@@ -87,11 +91,32 @@ public class AcnImageView extends FrameLayout {
     }
 
     public void setImageFromURL(String imageURL, boolean zoomable){
+        this.setImage(imageURL, zoomable, ImageType.URL);
+    }
+
+    public void setImageFromDrawable(int imageDrawable, boolean zoomable){
+        this.setImage(imageDrawable, zoomable, ImageType.DRAWABLE);
+    }
+
+    public void setImageFromAssets(String imageAsset, boolean zoomable){
+        this.setImage(imageAsset, zoomable, ImageType.ASSET);
+    }
+
+    private <T> void  setImage(T imageRes, boolean zoomable, ImageType imageType){
+
+        String image = "";
+        if(imageType == ImageType.URL)
+            image = (String) imageRes;
+        else if(imageType == ImageType.DRAWABLE)
+            image = "drawable://" + imageRes;
+        else if(imageType == ImageType.ASSET)
+            image = "assets://" + imageRes;
+
         if(zoomable) {
             attacher = new PhotoViewAttacher(imageView);
         }
 
-        ImageLoader.getInstance().displayImage(imageURL, imageView, new ImageLoadingListener() {
+        ImageLoader.getInstance().displayImage(image, imageView, new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
                 loadingView.showNow();
@@ -115,6 +140,7 @@ public class AcnImageView extends FrameLayout {
 
             }
         });
+
     }
 
 }

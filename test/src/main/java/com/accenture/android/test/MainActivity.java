@@ -17,14 +17,12 @@ import butterknife.Bind;
 public class MainActivity extends AcnActivity {
 
     public MainActivity(){
-        super(R.layout.activity_main, R.id.toolbar, null, R.color.StatusBar);
+        super(R.layout.activity_main, R.id.toolbar, null, R.color.statusBar);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);
 
         acn_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +31,12 @@ public class MainActivity extends AcnActivity {
                 startActivity(intent);
             }
         });
+
+        acn_imageview_url.setImageFromURL("http://goo.gl/T59s3M", false);
+
+        acn_imageview_drawable.setImageFromDrawable(R.drawable.image, false);
+
+        acn_imageview_asset.setImageFromAssets("image.jpg", false);
 
     }
 
@@ -47,10 +51,16 @@ public class MainActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_imageview)
-    AcnImageView acn_imageview;
-
     @Bind(R.id.acn_button)
     AcnButton acn_button;
+
+    @Bind(R.id.acn_imageview_url)
+    AcnImageView acn_imageview_url;
+
+    @Bind(R.id.acn_imageview_drawable)
+    AcnImageView acn_imageview_drawable;
+
+    @Bind(R.id.acn_imageview_asset)
+    AcnImageView acn_imageview_asset;
 
 }
