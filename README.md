@@ -1,5 +1,5 @@
-# AcnFramework – Android Framework
-AcnFramework is an Android framework developed to reduce the development effort by performing the initialization of many widely-used libraries inside its custom Application and Activity classes.
+# ACN Android Framework
+ACN Android Framework is being developed to reduce application development effort by encapsulating the initialization of many widely-used third-party libraries inside its custom Application and Activity classes.
 
 It also provides custom view classes with extra features added to default views of Android. See below for more details.
 
