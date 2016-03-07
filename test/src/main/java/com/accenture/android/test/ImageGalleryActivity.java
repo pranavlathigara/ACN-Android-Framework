@@ -1,6 +1,8 @@
 package com.accenture.android.test;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.widget.LinearLayout;
 
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.util.ImageClickHandler;
@@ -36,7 +38,10 @@ public class ImageGalleryActivity extends AcnActivity {
         acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
             @Override
             public void onImageClicked(int position, String imageURL) {
+
                 Logger.i("Image clicked: " + position + " - " + imageURL);
+                Snackbar.make(container, "Image clicked: " + position + " - " + imageURL, Snackbar.LENGTH_SHORT).show();
+
             }
         });
 
@@ -52,6 +57,9 @@ public class ImageGalleryActivity extends AcnActivity {
         Logger.i("Internet status is put to shared prefs!");
 
     }
+
+    @Bind(R.id.container)
+    LinearLayout container;
 
     @Bind(R.id.acn_imagegallery)
     AcnImageGallery acn_imagegallery;

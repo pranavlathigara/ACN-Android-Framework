@@ -2,6 +2,7 @@ package com.accenture.android.framework.util;
 
 import android.app.Application;
 import android.content.ContextWrapper;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
@@ -89,6 +90,7 @@ public class AppLevelInitializer {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(application)
                 .defaultDisplayImageOptions(defaultOptions)
                 .threadPoolSize(5)
+                .diskCacheExtraOptions(640, 640, null)
                 /*.memoryCacheExtraOptions(480, 800) // default = device screen dimensions
                 .discCacheExtraOptions(480, 800, null)
                 .threadPoolSize(3) // default

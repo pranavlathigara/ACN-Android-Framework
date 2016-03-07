@@ -76,18 +76,10 @@ The following classes can be found under `view` package:
     - No limit for number of rows
 - Supports loading images from URL list
     - `acn_imagegallery.setImagesFromURLs(imageURLs);`
+- Set **ImageClickHandler** to handle image clicks
+    - `acn_imagegallery.setImageClickHandler(new ImageClickHandler() { ... });`
 - Custom XML attributes:
     - `spacing` (dimension)
-- Set **ImageClickHandler** to handle image clicks:
-
-    ```java
-    acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
-        @Override
-        public void onImageClicked(int position, String imageURL) {
-            Logger.i("Image clicked: " + position + " - " + imageURL);
-        }
-    });
-    ```
 
 
 
@@ -102,7 +94,7 @@ The following classes can be found under `util` package:
 
 #### ImageClickHandler (abstract class)
 - Includes abstract method `onImageClicked(int position, String imageURL)`
-    - See **AcnImageGallery** for its usage
+
 
 
 ## How to use this framework
