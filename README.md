@@ -1,5 +1,5 @@
 # ACN Android Framework
-ACN Android Framework is being developed to reduce application development effort by encapsulating the initialization of many widely-used third-party libraries inside its custom Application and Activity classes.
+ACN Android Framework is being developed to reduce application development effort and time by encapsulating the initialization of many widely-used third-party libraries inside its custom Application and Activity classes.
 
 It also provides custom view classes with extra features added to default views of Android. See below for more details.
 
@@ -10,10 +10,12 @@ The following classes can be found under `context` package:
 
 #### AcnApplication (abstract class, extends Application)
 - Constructor takes the following params:
-    - `defaultFont` (String) 
+    - `appFont` (String)
         - e.g., "Gotham-Black.ttf" (located in the directory `assets/fonts/`)
     - `loggerTag` (String)
         - e.g., "LOGGER"
+    - `imageFadeInDuration` (int)
+        - e.g., 300 (in millis)
 - Initializes the following libraries:
     - [Logger](https://github.com/orhanobut/logger)
     - [EasyPreferences](https://github.com/Pixplicity/EasyPreferences)
@@ -92,7 +94,7 @@ The following classes can be found under `util` package:
 3. Inside project-level `gradle` file, add the following line under `allprojects/repositories` tag:
     - `maven { url "https://jitpack.io" }`
 4. Inside `AndroidManifest.xml`, add the following lines under `Application` tag:
-    - `tools:replace="android:theme, android:name"`
+    - `tools:replace="theme, label"`
     - `android:theme="@style/AcnTheme"`
 
 See `test` module for sample usage.

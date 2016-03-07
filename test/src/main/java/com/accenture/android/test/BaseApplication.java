@@ -8,7 +8,7 @@ import com.accenture.android.framework.context.AcnApplication;
 public class BaseApplication extends AcnApplication {
 
     public BaseApplication(){
-        super("Gotham-Black.ttf", "LOGGER");
+        super("Gotham-Black.ttf", "LOGGER", 300);
     }
 
     @Override

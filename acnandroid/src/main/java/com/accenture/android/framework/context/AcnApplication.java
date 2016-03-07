@@ -12,10 +12,11 @@ import com.accenture.android.framework.util.Config;
  */
 public abstract class AcnApplication extends Application {
 
-    public AcnApplication(String defaultFont, String loggerTag){
+    public AcnApplication(String appFont, String loggerTag, int imageFadeInDuration){
 
-        Config.defaultFont = defaultFont;
+        Config.appFont = appFont;
         Config.loggerTag = loggerTag;
+        Config.imageFadeInDuration = imageFadeInDuration;
 
     }
 
@@ -30,8 +31,8 @@ public abstract class AcnApplication extends Application {
         AppLevelInitializer.initLogger(Config.loggerTag);
         AppLevelInitializer.initSharedPrefs(this);
         AppLevelInitializer.initIconify();
-        AppLevelInitializer.initDefFont(Config.defaultFont);
-        AppLevelInitializer.initImageLoader(this, 300);
+        AppLevelInitializer.initAppFont(Config.appFont);
+        AppLevelInitializer.initImageLoader(this, Config.imageFadeInDuration);
         AppLevelInitializer.initInternetListener(this);
 
     }

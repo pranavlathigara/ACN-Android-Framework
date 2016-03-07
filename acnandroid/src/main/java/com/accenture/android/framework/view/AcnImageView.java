@@ -82,7 +82,6 @@ public class AcnImageView extends FrameLayout {
                 float dotRadius = a.getDimension(R.styleable.AcnImageView_dotRadius, fiveDpInPixels);
                 loadingView.setDotRadius(dotRadius);
 
-
             } finally {
                 a.recycle();
             }

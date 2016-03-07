@@ -5,7 +5,6 @@ import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
-import com.accenture.android.framework.util.BusProvider;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.github.pwittchen.reactivenetwork.library.ReactiveNetwork;
 import com.joanzapata.iconify.Iconify;
@@ -65,13 +64,13 @@ public class AppLevelInitializer {
 
     }
 
-    public static void initDefFont(String defaultFont) {
+    public static void initAppFont(String appFont) {
 
-        if(TextUtils.isEmpty(defaultFont))
+        if(TextUtils.isEmpty(appFont))
             return;
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/" + defaultFont)
+                .setDefaultFontPath("fonts/" + appFont)
                 .setFontAttrId(R.attr.fontPath)
                 .build());
 
@@ -79,10 +78,10 @@ public class AppLevelInitializer {
 
     }
 
-    public static void initImageLoader(final Application application, int fadeInDuration) {
+    public static void initImageLoader(final Application application, int imageFadeInDuration) {
 
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .displayer(new FadeInBitmapDisplayer(fadeInDuration))
+                .displayer(new FadeInBitmapDisplayer(imageFadeInDuration))
                 .resetViewBeforeLoading(true)
                 .cacheOnDisk(true)
                 .cacheInMemory(true).build();

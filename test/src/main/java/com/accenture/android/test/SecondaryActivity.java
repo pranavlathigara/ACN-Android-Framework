@@ -21,7 +21,7 @@ public class SecondaryActivity extends AcnActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        acn_imageview_zoomable.setImageFromURL("http://goo.gl/56MHKp", true);
+        acn_imageview_zoomable.setImageFromURL("http://goo.gl/Ny2WcW", true);
 
     }
 

@@ -15,18 +15,18 @@ public class AcnButton extends FancyButton {
 
     public AcnButton(Context context) {
         super(context);
-        this.setDefFont();
+        this.setFont();
     }
 
     public AcnButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.setDefFont();
+        this.setFont();
     }
 
-    private void setDefFont(){
+    private void setFont(){
 
-        if(!TextUtils.isEmpty(Config.defaultFont)){
-            this.setCustomTextFont(Config.defaultFont);
+        if(!TextUtils.isEmpty(Config.appFont)){
+            this.setCustomTextFont(Config.appFont);
         }
 
     }
