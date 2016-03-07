@@ -76,8 +76,10 @@ The following classes can be found under `view` package:
     - No limit for number of rows
 - Supports loading images from URL list
     - `acn_imagegallery.setImagesFromURLs(imageURLs);`
+- Custom XML attributes:
+    - `spacing` (dimension)
 - Set **ImageClickHandler** to handle image clicks
-    ```java
+    ```
     acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
         @Override
         public void onImageClicked(int position, String imageURL) {
@@ -85,9 +87,6 @@ The following classes can be found under `view` package:
         }
     });
     ```
-    
-- Custom XML attributes:
-    - `spacing` (dimension)
 
 
 
