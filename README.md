@@ -85,6 +85,7 @@ The following classes can be found under `view` package:
         }
     });
     ```
+    
 - Custom XML attributes:
     - `spacing` (dimension)
 
