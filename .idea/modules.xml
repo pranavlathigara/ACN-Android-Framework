@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AcnFramework.iml" filepath="$PROJECT_DIR$/AcnFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/acnframework/acnframework.iml" filepath="$PROJECT_DIR$/acnframework/acnframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acnandroid/acnframework.iml" filepath="$PROJECT_DIR$/acnandroid/acnframework.iml" />
       <module fileurl="file://$PROJECT_DIR$/acnframework/framework.iml" filepath="$PROJECT_DIR$/acnframework/framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
