@@ -6,32 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.accenture.android.test.MainActivity">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+    <include
         android:id="@+id/toolbar"
-        android:gravity="center"
-        android:background="@color/primaryDark">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="@color/primary"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-    </android.support.v7.widget.Toolbar>
+        layout="@layout/toolbar_main"/>
     
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -52,7 +31,7 @@
                 android:gravity="center"
                 android:text="AcnTextView {fa-globe}"
                 android:textColor="@color/primaryDark"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <com.accenture.android.framework.view.AcnButton
                 android:layout_width="wrap_content"
@@ -70,19 +49,37 @@
                 fancy:fb_fontIconSize="25sp"
                 fancy:fb_iconPosition="left"
                 fancy:fb_radius="30dp"
-                fancy:fb_text="AcnButton"
-                fancy:fb_textSize="25sp"
+                fancy:fb_text="Zoomable Image"
+                fancy:fb_textSize="20sp"
                 fancy:fb_textColor="@color/primary"
-                android:id="@+id/acn_button"/>
+                android:id="@+id/button_zoomable_image"/>
+
+            <com.accenture.android.framework.view.AcnButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_borderColor="@color/primary"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_defaultColor="@color/primaryDark"
+                fancy:fb_focusColor="@color/focus"
+                fancy:fb_fontIconResource="&#xf17b;"
+                fancy:fb_fontIconSize="25sp"
+                fancy:fb_iconPosition="left"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="Image Gallery"
+                fancy:fb_textSize="20sp"
+                fancy:fb_textColor="@color/primary"
+                android:id="@+id/button_image_gallery"/>
 
             <com.accenture.android.framework.view.AcnImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
                 app:scaleType="centerCrop"
-                app:dotColor="@color/primaryDark"
-                app:dotCount="4"
-                app:dotRadius="10dp"
                 android:gravity="center"
                 android:id="@+id/acn_imageview_url" />
 
@@ -91,9 +88,6 @@
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
                 app:scaleType="fitXY"
-                app:dotColor="@color/primaryDark"
-                app:dotCount="5"
-                app:dotRadius="6dp"
                 android:gravity="center"
                 android:id="@+id/acn_imageview_drawable" />
 
@@ -102,9 +96,6 @@
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
                 app:scaleType="fitCenter"
-                app:dotColor="@color/primaryDark"
-                app:dotCount="5"
-                app:dotRadius="6dp"
                 android:gravity="center"
                 android:id="@+id/acn_imageview_asset" />
 

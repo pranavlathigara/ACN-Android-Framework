@@ -57,12 +57,11 @@ The following classes can be found under `view` package:
 #### AcnImageView (extends FrameLayout)
 - Includes the following UI components:
     - ImageView
-    - [DilatingDotsProgressBar](https://github.com/JustZak/DilatingDotsProgressBar)
+    - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView)
 - Supports loading image from URL, drawable, and assets
-    - While loading, it shows dots dilating
-        - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
-        - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
-        - `acn_imageview.setImageFromAssets("image.jpg", false);`
+    - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
+    - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
+    - `acn_imageview.setImageFromAssets("image.jpg", false);`
 - Supports zoomable images
     - Set the second param of above methods to `true`
 - Custom XML attributes:
@@ -70,9 +69,13 @@ The following classes can be found under `view` package:
         - `fitCenter`
         - `centerCrop`
         - `fitXY`
-    - `dotColor` (color)
-    - `dotCount` (integer)
-    - `dotRadius` (dimension)
+
+#### AcnImageGallery (extends LinearLayout)
+- Includes two AcnImageView component at each row
+    - Each image has an aspect ratio of 3:2
+    - No limit for number of rows
+- Supports loading images from URL list
+    - `acn_imagegallery.setImagesFromURLs(imageURLs);`
 
 
 

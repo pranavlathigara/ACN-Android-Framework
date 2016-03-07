@@ -24,10 +24,18 @@ public class MainActivity extends AcnActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        acn_button.setOnClickListener(new View.OnClickListener() {
+        button_zoomable_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SecondaryActivity.class);
+                Intent intent = new Intent(MainActivity.this, ZoomableImageActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button_image_gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ImageGalleryActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,8 +59,11 @@ public class MainActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_button)
-    AcnButton acn_button;
+    @Bind(R.id.button_zoomable_image)
+    AcnButton button_zoomable_image;
+
+    @Bind(R.id.button_image_gallery)
+    AcnButton button_image_gallery;
 
     @Bind(R.id.acn_imageview_url)
     AcnImageView acn_imageview_url;

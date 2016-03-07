@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.accenture.android.test.SecondaryActivity">
+        <activity android:name=".ZoomableImageActivity">
+
+        </activity>
+
+        <activity android:name=".ImageGalleryActivity">
 
         </activity>
 

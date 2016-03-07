@@ -10,10 +10,15 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.accenture.android.framework.R;
+import com.accenture.android.framework.util.BusProvider;
+import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
+import com.mingle.widget.LoadingView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.zl.reik.dilatingdotsprogressbar.DilatingDotsProgressBar;
+import com.orhanobut.logger.Logger;
+import com.pixplicity.easyprefs.library.Prefs;
+import com.squareup.otto.Subscribe;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -22,12 +27,12 @@ import uk.co.senab.photoview.PhotoViewAttacher;
  */
 public class AcnImageView extends FrameLayout {
 
-    enum ImageType{
+    enum ImageType {
         URL, DRAWABLE, ASSET
     }
 
     private ImageView imageView;
-    private DilatingDotsProgressBar loadingView;
+    private LoadingView loadingView;
 
     private PhotoViewAttacher attacher;
 
@@ -50,15 +55,14 @@ public class AcnImageView extends FrameLayout {
         View view = inflate(context, R.layout.acn_imageview, this);
 
         imageView = (ImageView) view.findViewById(R.id.imageView);
-        loadingView = (DilatingDotsProgressBar) view.findViewById(R.id.loadingView);
-
+        loadingView = (LoadingView) view.findViewById(R.id.loadingView);
 
         if(attrs != null) {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImageView, 0, 0);
 
             try {
                 //SCALE TYPE
-                int scaleType = a.getInteger(R.styleable.AcnImageView_scaleType, 0);
+                int scaleType = a.getInteger(R.styleable.AcnImageView_scaleType, 1);
                 if(scaleType == 0){
                     imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 }
@@ -70,7 +74,7 @@ public class AcnImageView extends FrameLayout {
                 }
 
                 //DOT COLOR
-                int dotColor = a.getColor(R.styleable.AcnImageView_dotColor, getResources().getColor(android.R.color.darker_gray));
+                /*int dotColor = a.getColor(R.styleable.AcnImageView_dotColor, getResources().getColor(android.R.color.darker_gray));
                 loadingView.setDotColor(dotColor);
 
                 //DOT COUNT
@@ -80,7 +84,7 @@ public class AcnImageView extends FrameLayout {
                 //DOT RADIUS
                 float fiveDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
                 float dotRadius = a.getDimension(R.styleable.AcnImageView_dotRadius, fiveDpInPixels);
-                loadingView.setDotRadius(dotRadius);
+                loadingView.setDotRadius(dotRadius);*/
 
             } finally {
                 a.recycle();
@@ -111,14 +115,14 @@ public class AcnImageView extends FrameLayout {
         else if(imageType == ImageType.ASSET)
             image = "assets://" + imageRes;
 
-        if(zoomable) {
+        if(zoomable && attacher == null) {
             attacher = new PhotoViewAttacher(imageView);
         }
 
         ImageLoader.getInstance().displayImage(image, imageView, new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
-                loadingView.showNow();
+                loadingView.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -128,7 +132,7 @@ public class AcnImageView extends FrameLayout {
 
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                loadingView.hideNow();
+                loadingView.setVisibility(View.GONE);
 
                 if(attacher != null)
                     attacher.update();

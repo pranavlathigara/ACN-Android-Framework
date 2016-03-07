@@ -3,25 +3,34 @@ package com.accenture.android.test;
 import android.os.Bundle;
 
 import com.accenture.android.framework.context.AcnActivity;
-import com.accenture.android.framework.view.AcnImageView;
+import com.accenture.android.framework.view.AcnImageGallery;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.squareup.otto.Subscribe;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 
-public class SecondaryActivity extends AcnActivity {
+public class ImageGalleryActivity extends AcnActivity {
 
-    public SecondaryActivity(){
-        super(R.layout.activity_secondary, R.id.toolbar, R.id.back_button, R.color.statusBar);
+    public ImageGalleryActivity(){
+        super(R.layout.activity_imagegallery, R.id.toolbar, R.id.back_button, R.color.statusBar);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        acn_imageview_zoomable.setImageFromURL("http://goo.gl/Ny2WcW", true);
+        ArrayList<String> imageURLs = new ArrayList<>();
+        imageURLs.add("http://goo.gl/kSv5Nw");
+        imageURLs.add("http://goo.gl/w1bC0b");
+        imageURLs.add("http://goo.gl/Ao7NsY");
+        imageURLs.add("http://goo.gl/hVk5e7");
+        imageURLs.add("http://goo.gl/kjyBSG");
+
+        acn_imagegallery.setImagesFromURLs(imageURLs);
 
     }
 
@@ -36,7 +45,7 @@ public class SecondaryActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_imageview_zoomable)
-    AcnImageView acn_imageview_zoomable;
+    @Bind(R.id.acn_imagegallery)
+    AcnImageGallery acn_imagegallery;
 
 }
