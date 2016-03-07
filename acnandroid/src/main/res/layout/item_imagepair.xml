@@ -16,7 +16,8 @@
 
     <View
         android:layout_width="4dp"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/gap" />
 
     <com.accenture.android.framework.view.AcnImageView
         android:layout_weight="1"

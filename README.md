@@ -76,6 +76,8 @@ The following classes can be found under `view` package:
     - No limit for number of rows
 - Supports loading images from URL list
     - `acn_imagegallery.setImagesFromURLs(imageURLs);`
+- Custom XML attributes:
+    - `spacing` (dimension)
 
 
 

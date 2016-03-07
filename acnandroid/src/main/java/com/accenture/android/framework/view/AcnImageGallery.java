@@ -2,10 +2,13 @@ package com.accenture.android.framework.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.accenture.android.framework.R;
@@ -20,6 +23,8 @@ public class AcnImageGallery extends LinearLayout {
 
     private Context context;
     private int heightInPx;
+
+    private int spacing;
 
     public AcnImageGallery(Context context) {
         super(context);
@@ -39,6 +44,18 @@ public class AcnImageGallery extends LinearLayout {
     private void init(Context context, AttributeSet attrs) {
         View view = inflate(context, R.layout.acn_imagegallery, this);
 
+        if(attrs != null) {
+            TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImageGallery, 0, 0);
+
+            try {
+                float fourDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
+                spacing = (int) a.getDimension(R.styleable.AcnImageGallery_spacing, fourDpInPixels);
+
+            } finally {
+                a.recycle();
+            }
+        }
+
         this.setOrientation(VERTICAL);
 
         this.context = context;
@@ -57,6 +74,11 @@ public class AcnImageGallery extends LinearLayout {
         for(int i = 0; i < imageURLs.size(); i = i + 2) {
             View child = inflate(context, R.layout.item_imagepair, null);
             this.addView(child, LinearLayout.LayoutParams.MATCH_PARENT, heightInPx);
+
+            child.setPadding(0, 0, 0, spacing);
+
+            View gap = child.findViewById(R.id.gap);
+            gap.getLayoutParams().width = spacing;
 
             //LEFTSIDE IMAGE
             AcnImageView image_1 = (AcnImageView) child.findViewById(R.id.image_1);

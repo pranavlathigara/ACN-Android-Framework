@@ -21,7 +21,8 @@
         <com.accenture.android.framework.view.AcnImageGallery
             android:id="@+id/acn_imagegallery"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:spacing="10dp" />
 
     </LinearLayout>
 
