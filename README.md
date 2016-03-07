@@ -78,7 +78,8 @@ The following classes can be found under `view` package:
     - `acn_imagegallery.setImagesFromURLs(imageURLs);`
 - Custom XML attributes:
     - `spacing` (dimension)
-- Set **ImageClickHandler** to handle image clicks
+- Set **ImageClickHandler** to handle image clicks:
+
     ```java
     acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
         @Override
