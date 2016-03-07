@@ -84,7 +84,7 @@ public class AppLevelInitializer {
                 .displayer(new FadeInBitmapDisplayer(imageFadeInDuration))
                 .resetViewBeforeLoading(true)
                 .cacheOnDisk(true)
-                .cacheInMemory(true).build();
+                .cacheInMemory(false).build();
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(application)
                 .defaultDisplayImageOptions(defaultOptions)

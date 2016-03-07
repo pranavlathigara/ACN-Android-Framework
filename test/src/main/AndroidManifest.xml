@@ -21,12 +21,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ZoomableImageActivity">
+        <activity android:name=".ViewTestActivity">
+        </activity>
 
+        <activity android:name=".ZoomableImageActivity">
         </activity>
 
         <activity android:name=".ImageGalleryActivity">
-
         </activity>
 
     </application>

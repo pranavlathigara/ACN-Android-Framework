@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.view.AcnButton;
-import com.accenture.android.framework.view.AcnImageView;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;
@@ -24,6 +23,14 @@ public class MainActivity extends AcnActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        button_view_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewTestActivity.class);
+                startActivity(intent);
+            }
+        });
+
         button_zoomable_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,12 +47,6 @@ public class MainActivity extends AcnActivity {
             }
         });
 
-        acn_imageview_url.setImageFromURL("http://goo.gl/T59s3M", false);
-
-        acn_imageview_drawable.setImageFromDrawable(R.drawable.image, false);
-
-        acn_imageview_asset.setImageFromAssets("image.jpg", false);
-
     }
 
     @Subscribe
@@ -59,19 +60,13 @@ public class MainActivity extends AcnActivity {
 
     }
 
+    @Bind(R.id.button_view_test)
+    AcnButton button_view_test;
+
     @Bind(R.id.button_zoomable_image)
     AcnButton button_zoomable_image;
 
     @Bind(R.id.button_image_gallery)
     AcnButton button_image_gallery;
-
-    @Bind(R.id.acn_imageview_url)
-    AcnImageView acn_imageview_url;
-
-    @Bind(R.id.acn_imageview_drawable)
-    AcnImageView acn_imageview_drawable;
-
-    @Bind(R.id.acn_imageview_asset)
-    AcnImageView acn_imageview_asset;
 
 }

@@ -10,11 +10,15 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar_secondary"/>
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
         android:orientation="vertical"
         android:gravity="center|top">
 
@@ -25,5 +29,7 @@
             app:spacing="4dp" />
 
     </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

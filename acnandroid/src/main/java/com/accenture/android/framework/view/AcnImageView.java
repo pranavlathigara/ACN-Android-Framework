@@ -4,21 +4,15 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.accenture.android.framework.R;
-import com.accenture.android.framework.util.BusProvider;
-import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.mingle.widget.LoadingView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.orhanobut.logger.Logger;
-import com.pixplicity.easyprefs.library.Prefs;
-import com.squareup.otto.Subscribe;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
