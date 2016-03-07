@@ -19,7 +19,7 @@ The following classes can be found under `context` package:
 - Initializes the following libraries:
     - [Logger](https://github.com/orhanobut/logger)
     - [EasyPreferences](https://github.com/Pixplicity/EasyPreferences)
-    - [Iconify](https://github.com/JoanZapata/android-iconify) (required to support FontAwesome icons inside AcnTextView)
+    - [Iconify](https://github.com/JoanZapata/android-iconify) (required to support FontAwesome icons inside **AcnTextView**)
     - [Calligraphy](https://github.com/chrisjenx/Calligraphy)
     - [Universal Image Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
     - [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) (required to observe the Internet connectivity status) 
@@ -38,7 +38,7 @@ The following classes can be found under `context` package:
 - Initializes the following libraries:
     - [Butter Knife](http://jakewharton.github.io/butterknife/)
 - Registers/unregisters [Otto Event Bus](http://square.github.io/otto/) at `onResume()`/`onPause()`
-- Includes abstract method `internetCatcher(ConnectivityStatus)`
+- Includes abstract method `internetCatcher(ConnectivityStatus status)`
     - While overriding, add `@Subscribe` before the method
 
 
@@ -71,11 +71,20 @@ The following classes can be found under `view` package:
         - `fitXY`
 
 #### AcnImageGallery (extends LinearLayout)
-- Includes two AcnImageView component at each row
+- Includes two **AcnImageView** components at each row
     - Each image has an aspect ratio of 3:2
     - No limit for number of rows
 - Supports loading images from URL list
     - `acn_imagegallery.setImagesFromURLs(imageURLs);`
+- Set **ImageClickHandler** to handle image clicks
+    ```java
+    acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
+        @Override
+        public void onImageClicked(int position, String imageURL) {
+            Logger.i("Image clicked: " + position + " - " + imageURL);
+        }
+    });
+    ```
 - Custom XML attributes:
     - `spacing` (dimension)
 
@@ -90,6 +99,9 @@ The following classes can be found under `util` package:
         - `BusProvider.getInstance().register(this);`
         - `BusProvider.getInstance().unregister(this);`
 
+#### ImageClickHandler (abstract class)
+- Includes abstract method `onImageClicked(int position, String imageURL)`
+    - See **AcnImageGallery** for its usage
 
 
 ## How to use this framework

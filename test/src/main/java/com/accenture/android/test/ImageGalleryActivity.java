@@ -3,6 +3,7 @@ package com.accenture.android.test;
 import android.os.Bundle;
 
 import com.accenture.android.framework.context.AcnActivity;
+import com.accenture.android.framework.util.ImageClickHandler;
 import com.accenture.android.framework.view.AcnImageGallery;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
@@ -31,6 +32,13 @@ public class ImageGalleryActivity extends AcnActivity {
         imageURLs.add("http://goo.gl/kjyBSG");
 
         acn_imagegallery.setImagesFromURLs(imageURLs);
+
+        acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
+            @Override
+            public void onImageClicked(int position, String imageURL) {
+                Logger.i("Image clicked: " + position + " - " + imageURL);
+            }
+        });
 
     }
 

@@ -1,6 +1,5 @@
 package com.accenture.android.framework.view;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
@@ -8,11 +7,10 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.accenture.android.framework.R;
-import com.orhanobut.logger.Logger;
+import com.accenture.android.framework.util.ImageClickHandler;
 
 import java.util.ArrayList;
 
@@ -23,8 +21,9 @@ public class AcnImageGallery extends LinearLayout {
 
     private Context context;
     private int heightInPx;
-
     private int spacing;
+
+    private ImageClickHandler imageClickHandler;
 
     public AcnImageGallery(Context context) {
         super(context);
@@ -67,6 +66,10 @@ public class AcnImageGallery extends LinearLayout {
 
     }
 
+    public void setImageClickHandler(ImageClickHandler imageClickHandler){
+        this.imageClickHandler = imageClickHandler;
+    }
+
     public void setImagesFromURLs(final ArrayList<String> imageURLs){
 
         this.removeAllViews();
@@ -86,6 +89,15 @@ public class AcnImageGallery extends LinearLayout {
             String imageURL = imageURLs.get(i);
             image_1.setImageFromURL(imageURL, false);
 
+            final int position1 = i;
+            final String url1 = imageURL;
+            image_1.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    imageClickHandler.onImageClicked(position1, url1);
+                }
+            });
+
             //RIGHTSIDE IMAGE
             AcnImageView image_2 = (AcnImageView) child.findViewById(R.id.image_2);
             if(i + 1 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
@@ -95,6 +107,15 @@ public class AcnImageGallery extends LinearLayout {
             else {
                 imageURL = imageURLs.get(i + 1);
                 image_2.setImageFromURL(imageURL, false);
+
+                final int position2 = i + 1;
+                final String url2 = imageURL;
+                image_2.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imageClickHandler.onImageClicked(position2, url2);
+                    }
+                });
             }
 
         }
