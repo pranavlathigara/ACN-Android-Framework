@@ -6,6 +6,8 @@
             <enum name="centerCrop" value="1"/>
             <enum name="fitXY" value="2"/>
         </attr>
+        <attr name="gifSrc" format="string"/>
+        <attr name="gifSize" format="dimension"/>
     </declare-styleable>
     <declare-styleable name="AcnImageGallery">
         <attr name="spacing" format="dimension"/>

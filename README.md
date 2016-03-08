@@ -58,17 +58,24 @@ The following classes can be found under `view` package:
 - Includes the following UI components:
     - ImageView
     - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView)
+    - [GifImageView](https://github.com/koral--/android-gif-drawable)
 - Supports loading image from URL, drawable, and assets
     - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
     - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
     - `acn_imageview.setImageFromAssets("image.jpg", false);`
 - Supports zoomable images
     - Set the second param of above methods to `true`
+- Supports custom GIF image for loading animation
+    - Set the following attributes in XML:
+        - `app:gifSrc="loading.gif"` (located in the directory `assets/`)
+        - `app:gifSize="80dp"`
 - Custom XML attributes:
     - `scaleType` (enum)
         - `fitCenter`
         - `centerCrop`
         - `fitXY`
+    - `gifSrc` (string)
+    - `gifSize` (dimension)
 
 #### AcnImageGallery (extends LinearLayout)
 - Includes two or three **AcnImageView** components at each row, depending on `columnType` attribute

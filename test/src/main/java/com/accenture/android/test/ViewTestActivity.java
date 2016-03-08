@@ -27,6 +27,8 @@ public class ViewTestActivity extends AcnActivity {
 
         acn_imageview_asset.setImageFromAssets("image.jpg", false);
 
+        acn_imageview_url_custom_loading.setImageFromURL("http://goo.gl/T59s3M", false);
+
     }
 
     @Subscribe
@@ -48,5 +50,8 @@ public class ViewTestActivity extends AcnActivity {
 
     @Bind(R.id.acn_imageview_asset)
     AcnImageView acn_imageview_asset;
+
+    @Bind(R.id.acn_imageview_url_custom_loading)
+    AcnImageView acn_imageview_url_custom_loading;
 
 }

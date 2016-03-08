@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <com.mingle.widget.LoadingView
         android:id="@+id/loadingView"
         android:visibility="gone"

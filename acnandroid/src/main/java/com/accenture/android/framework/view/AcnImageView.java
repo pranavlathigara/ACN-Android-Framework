@@ -3,7 +3,9 @@ package com.accenture.android.framework.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -14,6 +16,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
@@ -27,8 +31,11 @@ public class AcnImageView extends FrameLayout {
 
     private ImageView imageView;
     private LoadingView loadingView;
+    private GifImageView gifImageView;
 
     private PhotoViewAttacher attacher;
+
+    private boolean customGifEnabled = false;
 
     public AcnImageView(Context context) {
         super(context);
@@ -49,6 +56,7 @@ public class AcnImageView extends FrameLayout {
         View view = inflate(context, R.layout.acn_imageview, this);
 
         imageView = (ImageView) view.findViewById(R.id.imageView);
+        gifImageView = (GifImageView) view.findViewById(R.id.gifImageView);
         loadingView = (LoadingView) view.findViewById(R.id.loadingView);
 
         if(attrs != null) {
@@ -65,6 +73,23 @@ public class AcnImageView extends FrameLayout {
                 }
                 else if(scaleType == 2){
                     imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                }
+
+                //GIF SOURCE
+                String gifSrc = a.getString(R.styleable.AcnImageView_gifSrc);
+                if(gifSrc != null){
+                    customGifEnabled = true;
+                    try {
+                        //GIF SIZE
+                        float eightyDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());
+                        int gifSize = (int) a.getDimension(R.styleable.AcnImageView_gifSize, eightyDpInPixels);
+                        gifImageView.getLayoutParams().width = gifSize;
+
+                        GifDrawable gifFromAssets = new GifDrawable(context.getAssets(), gifSrc);
+                        gifImageView.setImageDrawable(gifFromAssets);
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
                 }
 
                 //DOT COLOR
@@ -116,7 +141,10 @@ public class AcnImageView extends FrameLayout {
         ImageLoader.getInstance().displayImage(image, imageView, new ImageLoadingListener() {
             @Override
             public void onLoadingStarted(String imageUri, View view) {
-                loadingView.setVisibility(View.VISIBLE);
+                if(customGifEnabled)
+                    gifImageView.setVisibility(View.VISIBLE);
+                else
+                    loadingView.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -126,7 +154,10 @@ public class AcnImageView extends FrameLayout {
 
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                loadingView.setVisibility(View.GONE);
+                if(customGifEnabled)
+                    gifImageView.setVisibility(View.GONE);
+                else
+                    loadingView.setVisibility(View.GONE);
 
                 if(attacher != null)
                     attacher.update();
