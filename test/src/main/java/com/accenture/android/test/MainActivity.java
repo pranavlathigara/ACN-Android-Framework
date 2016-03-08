@@ -51,11 +51,11 @@ public class MainActivity extends AcnActivity {
 
     @Subscribe
     @Override
-    public void internetCatcher(ConnectivityStatus connectivityStatus){
+    public void onInternetStatusChanged(ConnectivityStatus status){
 
-        Logger.i("Internet catcher: " + connectivityStatus.name());
+        Logger.i("Internet status: " + status.name());
 
-        Prefs.putString("internetStatus", connectivityStatus.name());
+        Prefs.putString("internetStatus", status.name());
         Logger.i("Internet status is put to shared prefs!");
 
     }

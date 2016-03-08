@@ -38,7 +38,7 @@ The following classes can be found under `context` package:
 - Initializes the following libraries:
     - [Butter Knife](http://jakewharton.github.io/butterknife/)
 - Registers/unregisters [Otto Event Bus](http://square.github.io/otto/) at `onResume()`/`onPause()`
-- Includes abstract method `internetCatcher(ConnectivityStatus status)`
+- Includes abstract method `onInternetStatusChanged(ConnectivityStatus status)`
     - While overriding, add `@Subscribe` before the method
 
 

@@ -62,7 +62,7 @@ public abstract class AcnActivity extends AppCompatActivity {
 
     }
 
-    public abstract void internetCatcher(ConnectivityStatus connectivityStatus);
+    public abstract void onInternetStatusChanged(ConnectivityStatus status);
 
     @Override
     protected void onResume() {
