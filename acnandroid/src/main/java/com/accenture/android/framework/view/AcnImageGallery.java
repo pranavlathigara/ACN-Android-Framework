@@ -22,6 +22,7 @@ public class AcnImageGallery extends LinearLayout {
     private Context context;
     private int heightInPx;
     private int spacing;
+    private int columnCount;
 
     private ImageClickHandler imageClickHandler;
 
@@ -50,6 +51,8 @@ public class AcnImageGallery extends LinearLayout {
                 float fourDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
                 spacing = (int) a.getDimension(R.styleable.AcnImageGallery_spacing, fourDpInPixels);
 
+                columnCount = a.getInteger(R.styleable.AcnImageGallery_columnType, 2);
+
             } finally {
                 a.recycle();
             }
@@ -70,7 +73,14 @@ public class AcnImageGallery extends LinearLayout {
         this.imageClickHandler = imageClickHandler;
     }
 
-    public void setImagesFromURLs(final ArrayList<String> imageURLs){
+    public void setImagesFromURLList(final ArrayList<String> imageURLs){
+        if(columnCount == 2)
+            this.setImagesInPairs(imageURLs);
+        else if(columnCount == 3)
+            this.setImagesInTriplets(imageURLs);
+    }
+
+    private void setImagesInPairs(final ArrayList<String> imageURLs){
 
         this.removeAllViews();
 
@@ -78,14 +88,16 @@ public class AcnImageGallery extends LinearLayout {
             View child = inflate(context, R.layout.item_imagepair, null);
             this.addView(child, LinearLayout.LayoutParams.MATCH_PARENT, heightInPx);
 
+            AcnImageView image_1 = (AcnImageView) child.findViewById(R.id.image_1);
+            AcnImageView image_2 = (AcnImageView) child.findViewById(R.id.image_2);
+
+            //SPACING
             child.setPadding(0, 0, 0, spacing);
 
             View gap = child.findViewById(R.id.gap);
             gap.getLayoutParams().width = spacing;
 
             //LEFTSIDE IMAGE
-            AcnImageView image_1 = (AcnImageView) child.findViewById(R.id.image_1);
-
             String imageURL = imageURLs.get(i);
             image_1.setImageFromURL(imageURL, false);
 
@@ -99,7 +111,6 @@ public class AcnImageGallery extends LinearLayout {
             });
 
             //RIGHTSIDE IMAGE
-            AcnImageView image_2 = (AcnImageView) child.findViewById(R.id.image_2);
             if(i + 1 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
                 image_2.setVisibility(View.GONE);
                 break;
@@ -116,6 +127,84 @@ public class AcnImageGallery extends LinearLayout {
                         imageClickHandler.onImageClicked(position2, url2);
                     }
                 });
+            }
+
+        }
+
+    }
+
+    private void setImagesInTriplets(final ArrayList<String> imageURLs){
+
+        this.removeAllViews();
+
+        for(int i = 0; i < imageURLs.size(); i = i + 3) {
+            View child = inflate(context, R.layout.item_imagetriplet, null);
+            this.addView(child, LinearLayout.LayoutParams.MATCH_PARENT, heightInPx);
+
+            AcnImageView image_1 = (AcnImageView) child.findViewById(R.id.image_1);
+            AcnImageView image_2 = (AcnImageView) child.findViewById(R.id.image_2);
+            AcnImageView image_3 = (AcnImageView) child.findViewById(R.id.image_3);
+
+            //SPACING
+            child.setPadding(0, 0, 0, spacing);
+
+            View gap_1 = child.findViewById(R.id.gap_1);
+            gap_1.getLayoutParams().width = spacing;
+
+            View gap_2 = child.findViewById(R.id.gap_2);
+            gap_2.getLayoutParams().width = spacing;
+
+            //LEFTSIDE IMAGE
+            String imageURL = imageURLs.get(i);
+            image_1.setImageFromURL(imageURL, false);
+
+            final int position1 = i;
+            final String url1 = imageURL;
+            image_1.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    imageClickHandler.onImageClicked(position1, url1);
+                }
+            });
+
+            //MIDDLE IMAGE
+            if(i + 1 == imageURLs.size()) { //NO MIDDLE IMAGE
+                image_2.setVisibility(View.GONE);
+                image_3.setVisibility(View.GONE);
+                break;
+            }
+            else {
+                imageURL = imageURLs.get(i + 1);
+                image_2.setImageFromURL(imageURL, false);
+
+                final int position2 = i + 1;
+                final String url2 = imageURL;
+                image_2.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        imageClickHandler.onImageClicked(position2, url2);
+                    }
+                });
+
+                //RIGHTSIDE IMAGE
+                if(i + 2 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
+                    image_3.setVisibility(View.GONE);
+                    break;
+                }
+                else {
+                    imageURL = imageURLs.get(i + 2);
+                    image_3.setImageFromURL(imageURL, false);
+
+                    final int position3 = i + 2;
+                    final String url3 = imageURL;
+                    image_3.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            imageClickHandler.onImageClicked(position3, url3);
+                        }
+                    });
+                }
+
             }
 
         }

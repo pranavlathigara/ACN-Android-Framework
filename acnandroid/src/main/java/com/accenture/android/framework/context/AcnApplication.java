@@ -6,6 +6,7 @@ import android.support.multidex.MultiDex;
 
 import com.accenture.android.framework.util.AppLevelInitializer;
 import com.accenture.android.framework.util.Config;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * Created by ugurcan.yildirim on 02.03.2016.
@@ -41,6 +42,17 @@ public abstract class AcnApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        try {
+            ImageLoader.getInstance().clearMemoryCache();
+            ImageLoader.getInstance().clearDiskCache();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
     }
 
 }

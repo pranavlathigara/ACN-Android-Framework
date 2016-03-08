@@ -71,15 +71,19 @@ The following classes can be found under `view` package:
         - `fitXY`
 
 #### AcnImageGallery (extends LinearLayout)
-- Includes two **AcnImageView** components at each row
-    - Each image has an aspect ratio of 3:2
+- Includes two or three **AcnImageView** components at each row, depending on `columnType` attribute
+    - Each image has an aspect ratio of 3:2 if `columnType` is set to `pair`
+    - Each image has an aspect ratio of 1:1 if `columnType` is set to `triplet`
     - No limit for number of rows
 - Supports loading images from URL list
-    - `acn_imagegallery.setImagesFromURLs(imageURLs);`
+    - `acn_imagegallery.setImagesFromURLList(imageURLs);`
 - Set **ImageClickHandler** to handle image clicks
     - `acn_imagegallery.setImageClickHandler(new ImageClickHandler() { ... });`
 - Custom XML attributes:
     - `spacing` (dimension)
+    - `columnType` (enum)
+        - `pair`
+        - `triplet`
 
 
 

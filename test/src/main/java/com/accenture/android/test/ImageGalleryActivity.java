@@ -33,9 +33,21 @@ public class ImageGalleryActivity extends AcnActivity {
         imageURLs.add("http://goo.gl/hVk5e7");
         imageURLs.add("http://goo.gl/kjyBSG");
 
-        acn_imagegallery.setImagesFromURLs(imageURLs);
+        acn_imagegallery_pairs.setImagesFromURLList(imageURLs);
 
-        acn_imagegallery.setImageClickHandler(new ImageClickHandler() {
+        acn_imagegallery_pairs.setImageClickHandler(new ImageClickHandler() {
+            @Override
+            public void onImageClicked(int position, String imageURL) {
+
+                Logger.i("Image clicked: " + position + " - " + imageURL);
+                Snackbar.make(container, "Image clicked: " + position + " - " + imageURL, Snackbar.LENGTH_SHORT).show();
+
+            }
+        });
+
+        acn_imagegallery_triplets.setImagesFromURLList(imageURLs);
+
+        acn_imagegallery_triplets.setImageClickHandler(new ImageClickHandler() {
             @Override
             public void onImageClicked(int position, String imageURL) {
 
@@ -61,7 +73,10 @@ public class ImageGalleryActivity extends AcnActivity {
     @Bind(R.id.container)
     LinearLayout container;
 
-    @Bind(R.id.acn_imagegallery)
-    AcnImageGallery acn_imagegallery;
+    @Bind(R.id.acn_imagegallery_pairs)
+    AcnImageGallery acn_imagegallery_pairs;
+
+    @Bind(R.id.acn_imagegallery_triplets)
+    AcnImageGallery acn_imagegallery_triplets;
 
 }

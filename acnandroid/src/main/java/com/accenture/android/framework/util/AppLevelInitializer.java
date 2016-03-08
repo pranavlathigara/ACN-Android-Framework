@@ -90,7 +90,6 @@ public class AppLevelInitializer {
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(application)
                 .defaultDisplayImageOptions(defaultOptions)
                 .threadPoolSize(5)
-                .diskCacheExtraOptions(640, 640, null)
                 /*.memoryCacheExtraOptions(480, 800) // default = device screen dimensions
                 .discCacheExtraOptions(480, 800, null)
                 .threadPoolSize(3) // default
@@ -109,6 +108,7 @@ public class AppLevelInitializer {
                 .defaultDisplayImageOptions(DisplayImageOptions.createSimple()) // default
                 .writeDebugLogs()*/
                 .build();
+
         ImageLoader.getInstance().init(config);
 
         Logger.i("Image loader is initialized!");

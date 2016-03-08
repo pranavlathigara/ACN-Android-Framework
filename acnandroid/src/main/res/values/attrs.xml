@@ -9,5 +9,9 @@
     </declare-styleable>
     <declare-styleable name="AcnImageGallery">
         <attr name="spacing" format="dimension"/>
+        <attr name="columnType" format="enum">
+            <enum name="pair" value="2"/>
+            <enum name="triplet" value="3"/>
+        </attr>
     </declare-styleable>
 </resources>
