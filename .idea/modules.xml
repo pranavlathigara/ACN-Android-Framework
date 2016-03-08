@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AcnFramework.iml" filepath="$PROJECT_DIR$/AcnFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/acnandroid/acnframework.iml" filepath="$PROJECT_DIR$/acnandroid/acnframework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/acnframework/framework.iml" filepath="$PROJECT_DIR$/acnframework/framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ACN-Android-Framework.iml" filepath="$PROJECT_DIR$/ACN-Android-Framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acnandroid/acnandroid.iml" filepath="$PROJECT_DIR$/acnandroid/acnandroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>

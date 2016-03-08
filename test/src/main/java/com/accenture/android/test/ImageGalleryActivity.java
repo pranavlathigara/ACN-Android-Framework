@@ -27,11 +27,11 @@ public class ImageGalleryActivity extends AcnActivity {
         super.onCreate(savedInstanceState);
 
         ArrayList<String> imageURLs = new ArrayList<>();
-        imageURLs.add("http://goo.gl/kSv5Nw");
-        imageURLs.add("http://goo.gl/w1bC0b");
-        imageURLs.add("http://goo.gl/Ao7NsY");
-        imageURLs.add("http://goo.gl/hVk5e7");
-        imageURLs.add("http://goo.gl/kjyBSG");
+        imageURLs.add("http://goo.gl/I9e5GH");
+        imageURLs.add("https://goo.gl/m2CkdC");
+        imageURLs.add("http://goo.gl/a1ab9F");
+        imageURLs.add("http://goo.gl/onGsc9");
+        imageURLs.add("http://goo.gl/1EldJ2");
 
         acn_imagegallery_pairs.setImagesFromURLList(imageURLs);
 

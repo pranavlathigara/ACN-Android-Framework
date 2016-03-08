@@ -74,10 +74,12 @@ public class AcnImageGallery extends LinearLayout {
     }
 
     public void setImagesFromURLList(final ArrayList<String> imageURLs){
+
         if(columnCount == 2)
             this.setImagesInPairs(imageURLs);
         else if(columnCount == 3)
             this.setImagesInTriplets(imageURLs);
+
     }
 
     private void setImagesInPairs(final ArrayList<String> imageURLs){
@@ -98,35 +100,20 @@ public class AcnImageGallery extends LinearLayout {
             gap.getLayoutParams().width = spacing;
 
             //LEFTSIDE IMAGE
-            String imageURL = imageURLs.get(i);
-            image_1.setImageFromURL(imageURL, false);
+            int position1 = i;
+            String url1 = imageURLs.get(i);
 
-            final int position1 = i;
-            final String url1 = imageURL;
-            image_1.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    imageClickHandler.onImageClicked(position1, url1);
-                }
-            });
+            initImage(image_1, position1, url1);
 
             //RIGHTSIDE IMAGE
-            if(i + 1 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
+            int position2 = i + 1;
+            if(position2 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
                 image_2.setVisibility(View.GONE);
                 break;
             }
             else {
-                imageURL = imageURLs.get(i + 1);
-                image_2.setImageFromURL(imageURL, false);
-
-                final int position2 = i + 1;
-                final String url2 = imageURL;
-                image_2.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        imageClickHandler.onImageClicked(position2, url2);
-                    }
-                });
+                String url2 = imageURLs.get(i + 1);
+                initImage(image_2, position2, url2);
             }
 
         }
@@ -155,59 +142,48 @@ public class AcnImageGallery extends LinearLayout {
             gap_2.getLayoutParams().width = spacing;
 
             //LEFTSIDE IMAGE
-            String imageURL = imageURLs.get(i);
-            image_1.setImageFromURL(imageURL, false);
+            int position1 = i;
+            String url1 = imageURLs.get(i);
 
-            final int position1 = i;
-            final String url1 = imageURL;
-            image_1.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    imageClickHandler.onImageClicked(position1, url1);
-                }
-            });
+            initImage(image_1, position1, url1);
 
-            //MIDDLE IMAGE
-            if(i + 1 == imageURLs.size()) { //NO MIDDLE IMAGE
+            //CENTER IMAGE
+            int position2 = i + 1;
+            if(position2 == imageURLs.size()) { //NO CENTER IMAGE
                 image_2.setVisibility(View.GONE);
                 image_3.setVisibility(View.GONE);
                 break;
             }
             else {
-                imageURL = imageURLs.get(i + 1);
-                image_2.setImageFromURL(imageURL, false);
-
-                final int position2 = i + 1;
-                final String url2 = imageURL;
-                image_2.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        imageClickHandler.onImageClicked(position2, url2);
-                    }
-                });
+                String url2 = imageURLs.get(i + 1);
+                initImage(image_2, position2, url2);
 
                 //RIGHTSIDE IMAGE
-                if(i + 2 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
+                int position3 = i + 2;
+                if(position3 == imageURLs.size()) { //NO RIGHTSIDE IMAGE
                     image_3.setVisibility(View.GONE);
                     break;
                 }
                 else {
-                    imageURL = imageURLs.get(i + 2);
-                    image_3.setImageFromURL(imageURL, false);
-
-                    final int position3 = i + 2;
-                    final String url3 = imageURL;
-                    image_3.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            imageClickHandler.onImageClicked(position3, url3);
-                        }
-                    });
+                    String url3 = imageURLs.get(i + 2);
+                    initImage(image_3, position3, url3);
                 }
 
             }
 
         }
+
+    }
+
+    private void initImage(AcnImageView acnImageView, final int position, final String imageURL){
+
+        acnImageView.setImageFromURL(imageURL, false);
+        acnImageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageClickHandler.onImageClicked(position, imageURL);
+            }
+        });
 
     }
 
