@@ -1,7 +1,7 @@
 # ACN Android Framework
 ACN Android Framework is being developed to reduce application development effort and time by encapsulating the initialization and configuration of many widely-used third-party libraries inside its custom Application and Activity classes.
 
-It also provides custom view classes with extra features added to default views of Android. See below for more details.
+It also provides custom view classes with extra features added to default views of Android and other third-party views shared on GitHub. See below for more details.
 
 ## Table of Contents
 1. [Context classes](#context)
