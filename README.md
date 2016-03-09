@@ -20,7 +20,7 @@ It also provides custom view classes with extra features added to default views 
 
 
 
-## <a name="context"></a>Context classes
+## <a name="context"></a>1. Context classes
 The following classes can be found under `context` package:
 
 #### <a name="acnapplication"></a>AcnApplication (abstract class, extends Application)
@@ -58,7 +58,7 @@ The following classes can be found under `context` package:
 
 
 
-## <a name="view"></a>View classes
+## <a name="view"></a>2. View classes
 The following classes can be found under `view` package:
 
 #### <a name="acnbutton"></a>AcnButton (extends FancyButton)
@@ -124,7 +124,7 @@ The following classes can be found under `view` package:
 
 
 
-## <a name="util"></a>Util classes
+## <a name="util"></a>3. Util classes
 The following classes can be found under `util` package:
 
 #### <a name="busprovider"></a>BusProvider
@@ -138,7 +138,7 @@ The following classes can be found under `util` package:
 
 
 
-## <a name="howtouse"></a>How to use this framework
+## <a name="howtouse"></a>4. How to use this framework
 1. Add `acnandroid` module to your project
 2. Inside module-level `build.gradle` file of your module, add the following line under `dependencies` tag:
     - `compile project(':acnandroid')`
