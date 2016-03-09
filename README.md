@@ -5,22 +5,25 @@ It also provides custom view classes with extra features added to default views 
 
 ## Table of Contents
 1. [Context classes](#context)
-    - AcnApplication
-    - AcnActivity
-2. View classes
-    - AcnButton
-    - AcnTextView
-    - AcnImageView
-    - AcnImageGallery
-    - AcnImagePager
-3. Util classes
-    - BusProvider
-    - ImageClickHandler
+    - [AcnApplication](#acnapplication)
+    - [AcnActivity](#acnactivity)
+2. [View classes](#view)
+    - [AcnButton](#acnbutton)
+    - [AcnTextView](#acntextview)
+    - [AcnImageView](#acnimageview)
+    - [AcnImageGallery](#acnimagegallery)
+    - [AcnImagePager](#acnimagepager)
+3. [Util classes](#util)
+    - [BusProvider](#busprovider)
+    - [ImageClickHandler](#imageclickhandler)
+4. [How to use this framework](#howtouse)
+
+
 
 ## <a name="context"></a>Context classes
 The following classes can be found under `context` package:
 
-#### AcnApplication (abstract class, extends Application)
+#### <a name="acnapplication"></a>AcnApplication (abstract class, extends Application)
 - Constructor takes the following params:
     - `appFont` (String)
         - e.g., "Gotham-Black.ttf" (located in the directory `assets/fonts/`)
@@ -37,7 +40,7 @@ The following classes can be found under `context` package:
     - [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) (required to observe the Internet connectivity status) 
 - Has multidex support
 
-#### AcnActivity (abstract class, extends AppCompatActivity)
+#### <a name="acnactivity"></a>AcnActivity (abstract class, extends AppCompatActivity)
 - Constructor takes the following params:
     - `layoutRes` (int) 
         - e.g., `R.layout.activity_main`
@@ -55,18 +58,18 @@ The following classes can be found under `context` package:
 
 
 
-## View classes
+## <a name="view"></a>View classes
 The following classes can be found under `view` package:
 
-#### AcnButton (extends FancyButton)
+#### <a name="acnbutton"></a>AcnButton (extends FancyButton)
 - Can do anything that [FancyButton](https://github.com/medyo/Fancybuttons) does
 
-#### AcnTextView (extends IconTextView)
+#### <a name="acntextview"></a>AcnTextView (extends IconTextView)
 - Can do anything that [IconTextView](https://github.com/JoanZapata/android-iconify) does
 - Allows to use [FontAwesome icons](http://fortawesome.github.io/Font-Awesome/icons/) inside text
     - `android:text="Hello world {fa-globe}"`
 
-#### AcnImageView (extends FrameLayout)
+#### <a name="acnimageview"></a>AcnImageView (extends FrameLayout)
 - Includes the following UI components:
     - ImageView
     - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView)
@@ -89,7 +92,7 @@ The following classes can be found under `view` package:
     - `gifSrc` (string)
     - `gifSize` (dimension)
 
-#### AcnImageGallery (extends LinearLayout)
+#### <a name="acnimagegallery"></a>AcnImageGallery (extends LinearLayout)
 - Includes two or three **AcnImageView** components at each row, depending on `columnType` attribute
     - Each image has an aspect ratio of 3:2 if `columnType` is set to `pair`
     - Each image has an aspect ratio of 1:1 if `columnType` is set to `triplet`
@@ -104,7 +107,7 @@ The following classes can be found under `view` package:
         - `pair` (default)
         - `triplet`
         
-#### AcnImagePager (extends RelativeLayout)
+#### <a name="acnimagepager"></a>AcnImagePager (extends RelativeLayout)
 - Includes the following UI components:
     - [SliderLayout](https://github.com/daimajia/AndroidImageSlider) (Has no functionality -- just to be able to use PagerIndicator)
     - [HackyViewPager](https://github.com/chrisbanes/PhotoView/blob/master/sample/src/main/java/uk/co/senab/photoview/sample/HackyViewPager.java)
@@ -121,21 +124,21 @@ The following classes can be found under `view` package:
 
 
 
-## Util classes
+## <a name="util"></a>Util classes
 The following classes can be found under `util` package:
 
-#### BusProvider
+#### <a name="busprovider"></a>BusProvider
 - Includes static instance of [Otto Event Bus](http://square.github.io/otto/)
     - Use this class to register/unregister [Otto Event Bus](http://square.github.io/otto/)
         - `BusProvider.getInstance().register(this);`
         - `BusProvider.getInstance().unregister(this);`
 
-#### ImageClickHandler (abstract class)
+#### <a name="imageclickhandler"></a>ImageClickHandler (abstract class)
 - Includes abstract method `onImageClicked(int position, String imageURL)`
 
 
 
-## How to use this framework
+## <a name="howtouse"></a>How to use this framework
 1. Add `acnandroid` module to your project
 2. Inside module-level `build.gradle` file of your module, add the following line under `dependencies` tag:
     - `compile project(':acnandroid')`
