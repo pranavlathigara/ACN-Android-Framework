@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.accenture.android.framework.R;
-import com.accenture.android.framework.util.ImagePagerAdapter;
+import com.accenture.android.framework.helper.HackyViewPager;
+import com.accenture.android.framework.adapter.ImagePagerAdapter;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;

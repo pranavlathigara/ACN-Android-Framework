@@ -37,6 +37,9 @@
         <activity android:name=".ZoomableImagePagerActivity">
         </activity>
 
+        <activity android:name=".ViewPagerActivity">
+        </activity>
+
     </application>
 
 </manifest>

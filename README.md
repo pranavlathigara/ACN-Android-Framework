@@ -11,6 +11,7 @@ It also provides custom view classes with extra features added to default views 
     - [AcnButton](#acnbutton)
     - [AcnTextView](#acntextview)
     - [AcnImageView](#acnimageview)
+    - [AcnViewPager](#acnviewpager)
     - [AcnImageGallery](#acnimagegallery)
     - [AcnImagePager](#acnimagepager)
 3. [Util classes](#util)
@@ -91,6 +92,13 @@ The following classes can be found under `view` package:
         - `fitXY`
     - `gifSrc` (string)
     - `gifSize` (dimension)
+    
+#### <a name="acnviewpager"></a>AcnViewPager (extends LinearLayout)
+- Includes the following UI components:
+    - [SlidingTabLayout](http://developer.android.com/samples/SlidingTabsBasic/src/com.example.android.common/view/SlidingTabLayout.html) (a customized version of it)
+    - ViewPager
+- Set tabs and fragments with one line of code
+    - `acn_viewpager.setContent(fragments, tabTitles);`
 
 #### <a name="acnimagegallery"></a>AcnImageGallery (extends LinearLayout)
 - Includes two or three **AcnImageView** components at each row, depending on `columnType` attribute

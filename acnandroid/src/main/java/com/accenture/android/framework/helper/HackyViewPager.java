@@ -1,4 +1,4 @@
-package com.accenture.android.framework.view;
+package com.accenture.android.framework.helper;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -25,7 +25,7 @@ import android.view.MotionEvent;
  *
  * @author Chris Banes
  */
-class HackyViewPager extends ViewPager {
+public class HackyViewPager extends ViewPager {
 
     private boolean isLocked;
 

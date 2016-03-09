@@ -63,6 +63,14 @@ public class MainActivity extends AcnActivity {
             }
         });
 
+        button_viewpager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Subscribe
@@ -90,5 +98,8 @@ public class MainActivity extends AcnActivity {
 
     @Bind(R.id.button_imagepager_zoomable)
     AcnButton button_imagepager_zoomable;
+
+    @Bind(R.id.button_viewpager)
+    AcnButton button_viewpager;
 
 }

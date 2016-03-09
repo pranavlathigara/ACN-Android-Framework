@@ -1,4 +1,4 @@
-package com.accenture.android.framework.util;
+package com.accenture.android.framework.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
