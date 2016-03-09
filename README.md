@@ -106,6 +106,7 @@ The following classes can be found under `view` package:
     - `columnType` (enum)
         - `pair` (default)
         - `triplet`
+- [Screenshot](/screenshots/AcnImageGallery.jpg?raw=true)
         
 #### <a name="acnimagepager"></a>AcnImagePager (extends RelativeLayout)
 - Includes the following UI components:
@@ -122,6 +123,7 @@ The following classes can be found under `view` package:
     - `selectedIndicatorSize` (dimension)
     - `unselectedIndicatorSize` (dimension)
     - `indicatorBottomMargin` (dimension)
+- [Screenshot](/screenshots/AcnImagePager.jpg?raw=true)
 
 
 
