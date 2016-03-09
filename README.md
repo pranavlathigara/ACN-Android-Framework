@@ -97,7 +97,7 @@ The following classes can be found under `view` package:
 - Includes the following UI components:
     - [SlidingTabLayout](http://developer.android.com/samples/SlidingTabsBasic/src/com.example.android.common/view/SlidingTabLayout.html) (a customized version of it)
     - ViewPager
-- Set fragments and tab titles with one line of code
+- Set fragments and tab titles with one line of code:
     - `acn_viewpager.setContent(fragments, tabTitles);`
 - [Screenshot](/screenshots/AcnViewPager.jpg)
 
