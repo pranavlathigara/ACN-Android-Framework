@@ -143,7 +143,7 @@ The following classes can be found under `util` package:
 
 ## <a name="howtouse"></a>4. How to use this framework
 1. Add `acnandroid` module to your project
-2. Inside module-level `build.gradle` file of your module, add the following line under `dependencies` tag:
+2. Inside module-level `build.gradle` file (that belongs to your module), add the following line under `dependencies` tag:
     - `compile project(':acnandroid')`
 3. Inside project-level `build.gradle` file, add the following line under `allprojects/repositories` tag:
     - `maven { url "https://jitpack.io" }`
