@@ -3,9 +3,21 @@ ACN Android Framework is being developed to reduce application development effor
 
 It also provides custom view classes with extra features added to default views of Android. See below for more details.
 
+## Table of Contents
+1. [Context classes](#context)
+    - AcnApplication
+    - AcnActivity
+2. View classes
+    - AcnButton
+    - AcnTextView
+    - AcnImageView
+    - AcnImageGallery
+    - AcnImagePager
+3. Util classes
+    - BusProvider
+    - ImageClickHandler
 
-
-## Context classes
+## <a name="context"></a>Context classes
 The following classes can be found under `context` package:
 
 #### AcnApplication (abstract class, extends Application)
@@ -89,7 +101,7 @@ The following classes can be found under `view` package:
 - Custom XML attributes:
     - `spacing` (dimension)
     - `columnType` (enum)
-        - `pair`
+        - `pair` (default)
         - `triplet`
         
 #### AcnImagePager (extends RelativeLayout)

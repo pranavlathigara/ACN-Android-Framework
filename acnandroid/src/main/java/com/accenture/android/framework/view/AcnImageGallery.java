@@ -22,7 +22,7 @@ public class AcnImageGallery extends LinearLayout {
     private Context context;
     private int heightInPx;
     private int spacing;
-    private int columnCount;
+    private int columnCount = 2;
 
     private ImageClickHandler imageClickHandler;
 
