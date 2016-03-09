@@ -99,6 +99,7 @@ The following classes can be found under `view` package:
     - ViewPager
 - Set fragments and tab titles with one line of code
     - `acn_viewpager.setContent(fragments, tabTitles);`
+- [Screenshot](/screenshots/AcnViewPager.jpg)
 
 #### <a name="acnimagegallery"></a>AcnImageGallery (extends LinearLayout)
 - Includes two or three **AcnImageView** components at each row, depending on `columnType` attribute
