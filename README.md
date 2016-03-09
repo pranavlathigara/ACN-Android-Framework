@@ -98,7 +98,7 @@ The following classes can be found under `view` package:
     - [HackyViewPager](https://github.com/chrisbanes/PhotoView/blob/master/sample/src/main/java/uk/co/senab/photoview/sample/HackyViewPager.java)
     - [PagerIndicator](https://github.com/daimajia/AndroidImageSlider)
 - Supports loading images from URL list
-    - `acn_imagepager.setImagesFromURLList(imageURLs, false)`
+    - `acn_imagepager.setImagesFromURLList(imageURLs, false);`
 - Supports zoomable images
     - Set the second param of above method to `true`
 - Custom XML attributes:
