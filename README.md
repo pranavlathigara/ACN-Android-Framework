@@ -72,8 +72,8 @@ The following classes can be found under `view` package:
 #### <a name="acnimageview"></a>AcnImageView (extends FrameLayout)
 - Includes the following UI components:
     - ImageView
-    - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView)
-    - [GifImageView](https://github.com/koral--/android-gif-drawable)
+    - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView) (default loading animation)
+    - [GifImageView](https://github.com/koral--/android-gif-drawable) (custom loading animation)
 - Supports loading image from URL, drawable, and assets
     - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
     - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
