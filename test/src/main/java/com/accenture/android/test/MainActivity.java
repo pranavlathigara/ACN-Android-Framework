@@ -26,7 +26,7 @@ public class MainActivity extends AcnActivity {
         button_view_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ViewTestActivity.class);
+                Intent intent = new Intent(MainActivity.this, ImageActivity.class);
                 startActivity(intent);
             }
         });
@@ -55,6 +55,14 @@ public class MainActivity extends AcnActivity {
             }
         });
 
+        button_imagepager_zoomable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ZoomableImagePagerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Subscribe
@@ -79,5 +87,8 @@ public class MainActivity extends AcnActivity {
 
     @Bind(R.id.button_imagepager)
     AcnButton button_imagepager;
+
+    @Bind(R.id.button_imagepager_zoomable)
+    AcnButton button_imagepager_zoomable;
 
 }

@@ -13,10 +13,10 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 
-public class ImagePagerActivity extends AcnActivity {
+public class ZoomableImagePagerActivity extends AcnActivity {
 
-    public ImagePagerActivity(){
-        super(R.layout.activity_imagepager, R.id.toolbar, R.id.back_button, R.color.statusBar);
+    public ZoomableImagePagerActivity(){
+        super(R.layout.activity_imagepager_zoomable, R.id.toolbar, R.id.back_button, R.color.statusBar);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class ImagePagerActivity extends AcnActivity {
         imageURLs.add("http://goo.gl/OtTrsj");
         imageURLs.add("http://goo.gl/1EldJ2");
 
-        acn_imagepager.setImagesFromURLList(imageURLs, false);
+        acn_imagepager_zoomable.setImagesFromURLList(imageURLs, true);
 
     }
 
@@ -45,7 +45,7 @@ public class ImagePagerActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_imagepager)
-    AcnImagePager acn_imagepager;
+    @Bind(R.id.acn_imagepager_zoomable)
+    AcnImagePager acn_imagepager_zoomable;
 
 }

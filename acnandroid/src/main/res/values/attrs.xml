@@ -9,6 +9,7 @@
         <attr name="gifSrc" format="string"/>
         <attr name="gifSize" format="dimension"/>
     </declare-styleable>
+
     <declare-styleable name="AcnImageGallery">
         <attr name="spacing" format="dimension"/>
         <attr name="columnType" format="enum">
@@ -16,10 +17,12 @@
             <enum name="triplet" value="3"/>
         </attr>
     </declare-styleable>
+
     <declare-styleable name="AcnImagePager">
         <attr name="selectedIndicatorColor" format="color"/>
         <attr name="unselectedIndicatorColor" format="color"/>
         <attr name="selectedIndicatorSize" format="dimension"/>
         <attr name="unselectedIndicatorSize" format="dimension"/>
+        <attr name="indicatorBottomMargin" format="dimension"/>
     </declare-styleable>
 </resources>

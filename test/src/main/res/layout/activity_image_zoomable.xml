@@ -21,7 +21,6 @@
         <com.accenture.android.framework.view.AcnImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
             android:gravity="center"
             android:id="@+id/acn_imageview_zoomable" />
 

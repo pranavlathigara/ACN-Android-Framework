@@ -11,13 +11,13 @@
         layout="@layout/toolbar_secondary"/>
 
     <com.accenture.android.framework.view.AcnImagePager
-        android:id="@+id/acn_imagepager"
+        android:id="@+id/acn_imagepager_zoomable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:selectedIndicatorColor="@android:color/black"
         app:unselectedIndicatorColor="@android:color/darker_gray"
         app:selectedIndicatorSize="8dp"
         app:unselectedIndicatorSize="6dp"
-        app:indicatorBottomMargin="20dp" />
+        app:indicatorBottomMargin="30dp" />
 
 </LinearLayout>

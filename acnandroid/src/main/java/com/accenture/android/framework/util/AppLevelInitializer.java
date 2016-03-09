@@ -2,7 +2,6 @@ package com.accenture.android.framework.util;
 
 import android.app.Application;
 import android.content.ContextWrapper;
-import android.graphics.Bitmap;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;

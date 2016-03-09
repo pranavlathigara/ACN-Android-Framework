@@ -121,6 +121,7 @@ The following classes can be found under `view` package:
     - `unselectedIndicatorColor` (color)
     - `selectedIndicatorSize` (dimension)
     - `unselectedIndicatorSize` (dimension)
+    - `indicatorBottomMargin` (dimension)
 
 
 

@@ -58,6 +58,7 @@ public class ImagePagerAdapter extends PagerAdapter {
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         AcnImageView acnImageView = (AcnImageView) object;
+
         try {
             if (acnImageView.getAttacher() != null)
                 acnImageView.getAttacher().cleanup();

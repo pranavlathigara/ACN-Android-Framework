@@ -44,6 +44,8 @@ public class AcnImageGallery extends LinearLayout {
     private void init(Context context, AttributeSet attrs) {
         View view = inflate(context, R.layout.acn_imagegallery, this);
 
+        this.context = context;
+
         if(attrs != null) {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImageGallery, 0, 0);
 
@@ -59,8 +61,6 @@ public class AcnImageGallery extends LinearLayout {
         }
 
         this.setOrientation(VERTICAL);
-
-        this.context = context;
 
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();

@@ -11,10 +11,10 @@ import com.squareup.otto.Subscribe;
 
 import butterknife.Bind;
 
-public class ViewTestActivity extends AcnActivity {
+public class ImageActivity extends AcnActivity {
 
-    public ViewTestActivity(){
-        super(R.layout.activity_viewtest, R.id.toolbar, R.id.back_button, R.color.statusBar);
+    public ImageActivity(){
+        super(R.layout.activity_image, R.id.toolbar, R.id.back_button, R.color.statusBar);
     }
 
     @Override
