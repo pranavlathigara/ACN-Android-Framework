@@ -15,46 +15,46 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center|top">
-
-        <com.accenture.android.framework.view.AcnTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="In pairs"
-            android:textColor="@color/primaryDark"
-            android:textSize="20sp" />
-
-        <com.accenture.android.framework.view.AcnImageGallery
-            android:id="@+id/acn_imagegallery_pairs"
+        <LinearLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:spacing="4dp"
-            app:columnType="pair"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center|top">
 
-        <com.accenture.android.framework.view.AcnTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="In triplets"
-            android:textColor="@color/primaryDark"
-            android:textSize="20sp" />
+            <com.accenture.android.framework.view.AcnTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="In pairs"
+                android:textColor="@color/primaryDark"
+                android:textSize="20sp" />
 
-        <com.accenture.android.framework.view.AcnImageGallery
-            android:id="@+id/acn_imagegallery_triplets"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:spacing="4dp"
-            app:columnType="triplet"/>
+            <com.accenture.android.framework.view.AcnImageGallery
+                android:id="@+id/acn_imagegallery_pairs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spacing="4dp"
+                app:columnType="pair"/>
 
-    </LinearLayout>
+            <com.accenture.android.framework.view.AcnTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="In triplets"
+                android:textColor="@color/primaryDark"
+                android:textSize="20sp" />
+
+            <com.accenture.android.framework.view.AcnImageGallery
+                android:id="@+id/acn_imagegallery_triplets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spacing="4dp"
+                app:columnType="triplet"/>
+
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

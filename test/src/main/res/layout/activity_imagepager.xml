@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_secondary"/>
+
+    <com.accenture.android.framework.view.AcnImagePager
+        android:id="@+id/acn_imagepager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:selectedIndicatorColor="@android:color/black"
+        app:unselectedIndicatorColor="@android:color/darker_gray"
+        app:selectedIndicatorSize="8dp"
+        app:unselectedIndicatorSize="6dp"/>
+
+</LinearLayout>

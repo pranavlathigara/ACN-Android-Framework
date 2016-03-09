@@ -1,0 +1,65 @@
+package com.accenture.android.test;
+
+import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+import com.accenture.android.framework.context.AcnActivity;
+import com.accenture.android.framework.util.ImageClickHandler;
+import com.accenture.android.framework.util.ImagePagerAdapter;
+import com.accenture.android.framework.view.AcnImageGallery;
+import com.accenture.android.framework.view.AcnImagePager;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
+import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
+import com.orhanobut.logger.Logger;
+import com.pixplicity.easyprefs.library.Prefs;
+import com.squareup.otto.Subscribe;
+
+import java.util.ArrayList;
+
+import butterknife.Bind;
+import uk.co.senab.photoview.PhotoViewAttacher;
+
+public class ImagePagerActivity extends AcnActivity {
+
+
+
+    public ImagePagerActivity(){
+        super(R.layout.activity_imagepager, R.id.toolbar, R.id.back_button, R.color.statusBar);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ArrayList<String> imageURLs = new ArrayList<>();
+        imageURLs.add("http://goo.gl/I9e5GH");
+        imageURLs.add("https://goo.gl/m2CkdC");
+        imageURLs.add("http://goo.gl/a1ab9F");
+        imageURLs.add("http://goo.gl/OtTrsj");
+        imageURLs.add("http://goo.gl/1EldJ2");
+
+        acn_imagepager.setImagesFromURLList(imageURLs, true);
+
+    }
+
+    @Subscribe
+    @Override
+    public void onInternetStatusChanged(ConnectivityStatus status){
+
+        Logger.i("Internet status: " + status.name());
+
+        Prefs.putString("internetStatus", status.name());
+        Logger.i("Internet status is put to shared prefs!");
+
+    }
+
+    @Bind(R.id.acn_imagepager)
+    AcnImagePager acn_imagepager;
+
+}

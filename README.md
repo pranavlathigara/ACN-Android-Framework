@@ -71,7 +71,7 @@ The following classes can be found under `view` package:
         - `app:gifSize="80dp"`
 - Custom XML attributes:
     - `scaleType` (enum)
-        - `fitCenter`
+        - `fitCenter` (default)
         - `centerCrop`
         - `fitXY`
     - `gifSrc` (string)
@@ -91,6 +91,21 @@ The following classes can be found under `view` package:
     - `columnType` (enum)
         - `pair`
         - `triplet`
+        
+#### AcnImagePager (extends RelativeLayout)
+- Includes the following UI components:
+    - [SliderLayout](https://github.com/daimajia/AndroidImageSlider) (Has no functionality -- just to be able to use PagerIndicator)
+    - [HackyViewPager](https://github.com/chrisbanes/PhotoView/blob/master/sample/src/main/java/uk/co/senab/photoview/sample/HackyViewPager.java)
+    - [PagerIndicator](https://github.com/daimajia/AndroidImageSlider)
+- Supports loading images from URL list
+    - `acn_imagepager.setImagesFromURLList(imageURLs, false)`
+- Supports zoomable images
+    - Set the second param of above method to `true`
+- Custom XML attributes:
+    - `selectedIndicatorColor` (color)
+    - `unselectedIndicatorColor` (color)
+    - `selectedIndicatorSize` (dimension)
+    - `unselectedIndicatorSize` (dimension)
 
 
 

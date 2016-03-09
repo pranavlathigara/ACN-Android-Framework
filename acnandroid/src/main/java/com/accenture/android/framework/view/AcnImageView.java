@@ -64,7 +64,7 @@ public class AcnImageView extends FrameLayout {
 
             try {
                 //SCALE TYPE
-                int scaleType = a.getInteger(R.styleable.AcnImageView_scaleType, 1);
+                int scaleType = a.getInteger(R.styleable.AcnImageView_scaleType, 0);
                 if(scaleType == 0){
                     imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 }
@@ -110,6 +110,10 @@ public class AcnImageView extends FrameLayout {
             }
         }
 
+    }
+
+    public PhotoViewAttacher getAttacher() {
+        return attacher;
     }
 
     public void setImageFromURL(String imageURL, boolean zoomable){

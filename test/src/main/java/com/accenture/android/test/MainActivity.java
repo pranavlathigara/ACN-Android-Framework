@@ -39,10 +39,18 @@ public class MainActivity extends AcnActivity {
             }
         });
 
-        button_image_gallery.setOnClickListener(new View.OnClickListener() {
+        button_imagegallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ImageGalleryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button_imagepager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ImagePagerActivity.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +74,10 @@ public class MainActivity extends AcnActivity {
     @Bind(R.id.button_zoomable_image)
     AcnButton button_zoomable_image;
 
-    @Bind(R.id.button_image_gallery)
-    AcnButton button_image_gallery;
+    @Bind(R.id.button_imagegallery)
+    AcnButton button_imagegallery;
+
+    @Bind(R.id.button_imagepager)
+    AcnButton button_imagepager;
 
 }
