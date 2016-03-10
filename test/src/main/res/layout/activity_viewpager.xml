@@ -13,6 +13,11 @@
     <com.accenture.android.framework.view.AcnViewPager
         android:id="@+id/acn_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:indicatorColor="@color/primaryDark"
+        app:dividerColor="@android:color/darker_gray"
+        app:selectedTitleColor="@color/primaryDark"
+        app:unselectedTitleColor="@android:color/darker_gray"
+        app:tabBackgroundColor="@color/primary" />
 
 </LinearLayout>

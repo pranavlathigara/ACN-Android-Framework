@@ -99,6 +99,12 @@ The following classes can be found under `view` package:
     - ViewPager
 - Set fragments and tab titles with one line of code:
     - `acn_viewpager.setContent(fragments, tabTitles);`
+- Custom XML attributes:
+    - `indicatorColor` (color)
+    - `dividerColor` (color)
+    - `selectedTitleColor` (color)
+    - `unselectedTitleColor` (color)
+    - `tabBackgroundColor` (color)
 - [Screenshot](/screenshots/AcnViewPager.jpg)
 
 #### <a name="acnimagegallery"></a>AcnImageGallery (extends LinearLayout)

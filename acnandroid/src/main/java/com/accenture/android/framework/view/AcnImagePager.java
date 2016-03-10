@@ -63,20 +63,24 @@ public class AcnImagePager extends RelativeLayout {
         if(attrs != null) {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImagePager, 0, 0);
 
-            //INDICATOR COLOR
-            selectedIndicatorColor = a.getColor(R.styleable.AcnImagePager_selectedIndicatorColor, getResources().getColor(android.R.color.black));
-            unselectedIndicatorColor = a.getColor(R.styleable.AcnImagePager_unselectedIndicatorColor, getResources().getColor(android.R.color.darker_gray));
+            try {
+                //INDICATOR COLOR
+                selectedIndicatorColor = a.getColor(R.styleable.AcnImagePager_selectedIndicatorColor, getResources().getColor(android.R.color.black));
+                unselectedIndicatorColor = a.getColor(R.styleable.AcnImagePager_unselectedIndicatorColor, getResources().getColor(android.R.color.darker_gray));
 
-            //INDICATOR SIZE
-            float eightDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics());
-            float sixDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6, getResources().getDisplayMetrics());
-            selectedIndicatorSize = (int) a.getDimension(R.styleable.AcnImagePager_selectedIndicatorSize, eightDpInPixels);
-            unselectedIndicatorSize = (int) a.getDimension(R.styleable.AcnImagePager_unselectedIndicatorSize, sixDpInPixels);
+                //INDICATOR SIZE
+                float eightDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8, getResources().getDisplayMetrics());
+                float sixDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6, getResources().getDisplayMetrics());
+                selectedIndicatorSize = (int) a.getDimension(R.styleable.AcnImagePager_selectedIndicatorSize, eightDpInPixels);
+                unselectedIndicatorSize = (int) a.getDimension(R.styleable.AcnImagePager_unselectedIndicatorSize, sixDpInPixels);
 
-            //INDICATOR BOTTOM MARGIN
-            float twentyDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
-            int bottomMargin = (int) a.getDimension(R.styleable.AcnImagePager_indicatorBottomMargin, twentyDpInPixels);
-            pagerIndicator.setPadding(0, 0, 0, bottomMargin);
+                //INDICATOR BOTTOM MARGIN
+                float twentyDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
+                int bottomMargin = (int) a.getDimension(R.styleable.AcnImagePager_indicatorBottomMargin, twentyDpInPixels);
+                pagerIndicator.setPadding(0, 0, 0, bottomMargin);
+            } finally {
+                a.recycle();
+            }
         }
 
     }

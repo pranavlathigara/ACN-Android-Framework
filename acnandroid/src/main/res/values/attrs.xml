@@ -10,6 +10,14 @@
         <attr name="gifSize" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="AcnViewPager">
+        <attr name="indicatorColor" format="color"/>
+        <attr name="dividerColor" format="color"/>
+        <attr name="selectedTitleColor" format="color"/>
+        <attr name="unselectedTitleColor" format="color"/>
+        <attr name="tabBackgroundColor" format="color"/>
+    </declare-styleable>
+
     <declare-styleable name="AcnImageGallery">
         <attr name="spacing" format="dimension"/>
         <attr name="columnType" format="enum">
