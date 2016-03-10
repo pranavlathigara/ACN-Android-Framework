@@ -78,7 +78,7 @@ The following classes can be found under `view` package:
 - Supports loading image from URL, drawable, and assets
     - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
     - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
-    - `acn_imageview.setImageFromAssets("image.jpg", false);`
+    - `acn_imageview.setImageFromAssets("image.jpg", false);` (located in the directory `assets/`)
 - Supports zoomable images
     - Set the second param of above methods to `true`
 - Supports custom GIF image for loading animation
