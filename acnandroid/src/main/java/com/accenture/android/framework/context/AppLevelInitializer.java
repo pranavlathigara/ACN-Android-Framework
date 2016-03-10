@@ -1,10 +1,11 @@
-package com.accenture.android.framework.util;
+package com.accenture.android.framework.context;
 
 import android.app.Application;
 import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
+import com.accenture.android.framework.util.BusProvider;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.github.pwittchen.reactivenetwork.library.ReactiveNetwork;
 import com.joanzapata.iconify.Iconify;
@@ -24,7 +25,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 /**
  * Created by ugurcan.yildirim on 02.03.2016.
  */
-public class AppLevelInitializer {
+class AppLevelInitializer {
 
     public static void initLogger(String loggerTag) {
 

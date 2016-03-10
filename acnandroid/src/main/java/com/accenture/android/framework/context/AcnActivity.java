@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.accenture.android.framework.util.ActivityLevelInitializer;
 import com.accenture.android.framework.util.BusProvider;
 import com.accenture.android.framework.view.AcnButton;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;

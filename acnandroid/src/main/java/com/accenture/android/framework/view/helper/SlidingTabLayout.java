@@ -22,6 +22,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -244,7 +245,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
             }
 
             tabTitleView.setHorizontalFadingEdgeEnabled(true);
-            tabTitleView.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/" + Config.appFont));
+            if(!TextUtils.isEmpty(Config.appFont))
+                tabTitleView.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/" + Config.appFont));
             tabTitleView.setTextColor(textColorStateList);
             tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTitleSize);
 

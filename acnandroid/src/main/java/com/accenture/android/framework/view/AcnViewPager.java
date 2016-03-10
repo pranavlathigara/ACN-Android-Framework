@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.accenture.android.framework.R;
-import com.accenture.android.framework.adapter.ViewPagerAdapter;
+import com.accenture.android.framework.view.adapter.ViewPagerAdapter;
 import com.accenture.android.framework.view.helper.SlidingTabLayout;
 
 import java.util.ArrayList;

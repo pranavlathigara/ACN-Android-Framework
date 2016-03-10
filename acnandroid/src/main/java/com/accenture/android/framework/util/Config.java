@@ -6,7 +6,7 @@ package com.accenture.android.framework.util;
 public class Config {
 
     public static String appFont = "";
-    public static String loggerTag = "";
+    public static String loggerTag = "LOGGER";
     public static int imageFadeInDuration = 300;
 
 }

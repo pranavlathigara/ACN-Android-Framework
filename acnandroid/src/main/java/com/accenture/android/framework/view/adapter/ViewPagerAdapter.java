@@ -1,4 +1,4 @@
-package com.accenture.android.framework.adapter;
+package com.accenture.android.framework.view.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
