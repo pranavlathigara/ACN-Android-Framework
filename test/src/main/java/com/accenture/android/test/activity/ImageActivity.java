@@ -22,13 +22,15 @@ public class ImageActivity extends AcnActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        acn_imageview_url.setImageFromURL("http://goo.gl/T59s3M", false);
+        boolean zoomable = false;
 
-        acn_imageview_drawable.setImageFromDrawable(R.drawable.image, false);
+        acn_imageview_url.setImageFromURL("http://goo.gl/T59s3M", zoomable);
 
-        acn_imageview_asset.setImageFromAssets("image.jpg", false);
+        acn_imageview_drawable.setImageFromDrawable(R.drawable.image, zoomable);
 
-        acn_imageview_url_custom_loading.setImageFromURL("http://goo.gl/T59s3M", false);
+        acn_imageview_asset.setImageFromAssets("image.jpg", zoomable);
+
+        acn_imageview_url_custom_loading.setImageFromURL("http://goo.gl/T59s3M", zoomable);
 
     }
 

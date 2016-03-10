@@ -31,7 +31,9 @@ public class ImagePagerActivity extends AcnActivity {
         imageURLs.add("http://goo.gl/OtTrsj");
         imageURLs.add("http://goo.gl/1EldJ2");
 
-        acn_imagepager.setImagesFromURLList(imageURLs, false);
+        boolean zoomable = false;
+
+        acn_imagepager.setImagesFromURLList(imageURLs, zoomable);
 
     }
 

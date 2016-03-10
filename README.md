@@ -77,9 +77,9 @@ The following classes can be found under `view` package:
     - [LoadingView](https://github.com/zzz40500/android-shapeLoadingView) (default loading animation)
     - [GifImageView](https://github.com/koral--/android-gif-drawable) (custom loading animation)
 - Supports loading image from URL, drawable, and assets
-    - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", false);`
-    - `acn_imageview.setImageFromDrawable(R.drawable.image, false);`
-    - `acn_imageview.setImageFromAssets("image.jpg", false);` (located in the directory `assets/`)
+    - `acn_imageview.setImageFromURL("http://goo.gl/T59s3M", zoomable);`
+    - `acn_imageview.setImageFromDrawable(R.drawable.image, zoomable);`
+    - `acn_imageview.setImageFromAssets("image.jpg", zoomable);` (located in the directory `assets/`)
 - Supports zoomable images
     - Set the second param of above methods to `true`
 - Supports custom GIF image for loading animation
@@ -132,7 +132,7 @@ The following classes can be found under `view` package:
     - [HackyViewPager](https://github.com/chrisbanes/PhotoView/blob/master/sample/src/main/java/uk/co/senab/photoview/sample/HackyViewPager.java)
     - [PagerIndicator](https://github.com/daimajia/AndroidImageSlider)
 - Supports loading images from URL list
-    - `acn_imagepager.setImagesFromURLList(imageURLs, false);`
+    - `acn_imagepager.setImagesFromURLList(imageURLs, zoomable);`
 - Supports zoomable images
     - Set the second param of above method to `true`
 - Custom XML attributes:
