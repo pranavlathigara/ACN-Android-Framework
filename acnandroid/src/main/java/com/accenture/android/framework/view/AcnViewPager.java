@@ -3,7 +3,6 @@ package com.accenture.android.framework.view;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.accenture.android.framework.R;
 import com.accenture.android.framework.adapter.ViewPagerAdapter;
-import com.accenture.android.framework.helper.HackyViewPager;
-import com.accenture.android.framework.helper.SlidingTabLayout;
+import com.accenture.android.framework.view.helper.SlidingTabLayout;
 
 import java.util.ArrayList;
 

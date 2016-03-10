@@ -1,4 +1,4 @@
-package com.accenture.android.test;
+package com.accenture.android.test.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.util.ImageClickHandler;
 import com.accenture.android.framework.view.AcnImageGallery;
+import com.accenture.android.test.R;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;

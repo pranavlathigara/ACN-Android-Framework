@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.accenture.android.framework.helper;
+package com.accenture.android.framework.view.helper;
 
 import android.R;
 import android.content.Context;

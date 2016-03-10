@@ -1,9 +1,10 @@
-package com.accenture.android.test;
+package com.accenture.android.test.activity;
 
 import android.os.Bundle;
 
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.view.AcnImagePager;
+import com.accenture.android.test.R;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;
@@ -13,10 +14,10 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 
-public class ZoomableImagePagerActivity extends AcnActivity {
+public class ImagePagerActivity extends AcnActivity {
 
-    public ZoomableImagePagerActivity(){
-        super(R.layout.activity_imagepager_zoomable, R.id.toolbar, R.id.back_button, R.color.statusBar);
+    public ImagePagerActivity(){
+        super(R.layout.activity_imagepager, R.id.toolbar, R.id.back_button, R.color.statusBar);
     }
 
     @Override
@@ -30,7 +31,7 @@ public class ZoomableImagePagerActivity extends AcnActivity {
         imageURLs.add("http://goo.gl/OtTrsj");
         imageURLs.add("http://goo.gl/1EldJ2");
 
-        acn_imagepager_zoomable.setImagesFromURLList(imageURLs, true);
+        acn_imagepager.setImagesFromURLList(imageURLs, false);
 
     }
 
@@ -45,7 +46,7 @@ public class ZoomableImagePagerActivity extends AcnActivity {
 
     }
 
-    @Bind(R.id.acn_imagepager_zoomable)
-    AcnImagePager acn_imagepager_zoomable;
+    @Bind(R.id.acn_imagepager)
+    AcnImagePager acn_imagepager;
 
 }

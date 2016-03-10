@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.accenture.android.framework.helper;
+package com.accenture.android.framework.view.helper;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -24,17 +24,14 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.accenture.android.framework.R;
 import com.accenture.android.framework.util.Config;
 
 /**

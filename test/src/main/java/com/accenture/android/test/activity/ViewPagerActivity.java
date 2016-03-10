@@ -1,11 +1,12 @@
-package com.accenture.android.test;
+package com.accenture.android.test.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 import com.accenture.android.framework.context.AcnActivity;
-import com.accenture.android.framework.view.AcnImagePager;
 import com.accenture.android.framework.view.AcnViewPager;
+import com.accenture.android.test.R;
+import com.accenture.android.test.fragment.ViewPagerFragment;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;

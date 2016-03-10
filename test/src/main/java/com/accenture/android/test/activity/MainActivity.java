@@ -1,4 +1,4 @@
-package com.accenture.android.test;
+package com.accenture.android.test.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.view.AcnButton;
+import com.accenture.android.test.R;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;

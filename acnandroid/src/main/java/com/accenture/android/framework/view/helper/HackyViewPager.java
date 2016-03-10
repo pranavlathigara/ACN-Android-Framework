@@ -1,4 +1,4 @@
-package com.accenture.android.framework.helper;
+package com.accenture.android.framework.view.helper;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

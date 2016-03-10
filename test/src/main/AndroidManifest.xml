@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AcnTheme">
 
-        <activity android:name="com.accenture.android.test.MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,22 +22,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ImageActivity">
+        <activity android:name=".activity.ImageActivity">
         </activity>
 
-        <activity android:name=".ZoomableImageActivity">
+        <activity android:name=".activity.ZoomableImageActivity">
         </activity>
 
-        <activity android:name=".ImageGalleryActivity">
+        <activity android:name=".activity.ImageGalleryActivity">
         </activity>
 
-        <activity android:name=".ImagePagerActivity">
+        <activity android:name=".activity.ImagePagerActivity">
         </activity>
 
-        <activity android:name=".ZoomableImagePagerActivity">
+        <activity android:name=".activity.ZoomableImagePagerActivity">
         </activity>
 
-        <activity android:name=".ViewPagerActivity">
+        <activity android:name=".activity.ViewPagerActivity">
         </activity>
 
     </application>

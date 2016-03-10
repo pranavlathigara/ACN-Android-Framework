@@ -1,4 +1,4 @@
-package com.accenture.android.test;
+package com.accenture.android.test.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.accenture.android.framework.view.AcnTextView;
+import com.accenture.android.test.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
