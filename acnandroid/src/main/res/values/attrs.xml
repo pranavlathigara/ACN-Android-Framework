@@ -16,6 +16,7 @@
         <attr name="selectedTitleColor" format="color"/>
         <attr name="unselectedTitleColor" format="color"/>
         <attr name="tabBackgroundColor" format="color"/>
+        <attr name="tabTitleSize" format="dimension"/>
     </declare-styleable>
 
     <declare-styleable name="AcnImageGallery">

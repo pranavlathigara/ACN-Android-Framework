@@ -30,7 +30,7 @@ public class ViewPagerActivity extends AcnActivity {
         ArrayList<Fragment> fragments = new ArrayList<>();
 
         for(int i=1; i<=10; i++){
-            tabTitles.add("Tab " + i);
+            tabTitles.add("{fa-android} Tab " + i);
 
             Bundle bundle = new Bundle();
             bundle.putString("text", "TAB " + i);

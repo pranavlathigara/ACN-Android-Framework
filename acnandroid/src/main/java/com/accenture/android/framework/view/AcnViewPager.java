@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -28,6 +29,7 @@ public class AcnViewPager extends RelativeLayout {
 
     private ViewPagerAdapter viewPagerAdapter;
 
+    private float tabTitleSize;
     private int indicatorColor;
     private int dividerColor;
     private ColorStateList textColorStateList;
@@ -59,6 +61,10 @@ public class AcnViewPager extends RelativeLayout {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnViewPager, 0, 0);
 
             try {
+                //TAB TITLE SIZE
+                float fourteenSpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14, getResources().getDisplayMetrics());
+                tabTitleSize = a.getDimension(R.styleable.AcnViewPager_tabTitleSize, fourteenSpInPixels);
+
                 //TAB BACKGROUND COLOR
                 int tabBackgroundColor = a.getColor(R.styleable.AcnViewPager_tabBackgroundColor, getResources().getColor(android.R.color.white));
                 slidingTabLayout.setBackgroundColor(tabBackgroundColor);
@@ -107,7 +113,7 @@ public class AcnViewPager extends RelativeLayout {
                 return dividerColor;
             }
         });
-        slidingTabLayout.setViewPager(viewPager, textColorStateList);
+        slidingTabLayout.setViewPager(viewPager, tabTitleSize, textColorStateList);
 
     }
 

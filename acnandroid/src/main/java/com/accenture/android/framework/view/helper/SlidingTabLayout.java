@@ -33,6 +33,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.accenture.android.framework.util.Config;
+import com.accenture.android.framework.view.AcnTextView;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to
@@ -165,13 +166,13 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * Sets the associated view pager. Note that the assumption here is that the pager content
      * (number of tabs and tab titles) does not change after this call has been made.
      */
-    public void setViewPager(ViewPager viewPager, ColorStateList textColorStateList) {
+    public void setViewPager(ViewPager viewPager, float tabTitleSize, ColorStateList textColorStateList) {
         mTabStrip.removeAllViews();
 
         mViewPager = viewPager;
         if (viewPager != null) {
             viewPager.setOnPageChangeListener(new InternalViewPagerListener());
-            populateTabStrip(textColorStateList);
+            populateTabStrip(tabTitleSize, textColorStateList);
         }
     }
 
@@ -179,8 +180,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
      * Create a default view to be used for tabs. This is called if a custom tab view is not set via
      * {@link #setCustomTabView(int, int)}.
      */
-    protected TextView createDefaultTabView(Context context) {
-        TextView textView = new TextView(context);
+    protected AcnTextView createDefaultTabView(Context context) {
+        AcnTextView textView = new AcnTextView(context);
         textView.setGravity(Gravity.CENTER);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, TAB_VIEW_TEXT_SIZE_SP);
         textView.setTypeface(Typeface.DEFAULT_BOLD);
@@ -206,26 +207,26 @@ public class SlidingTabLayout extends HorizontalScrollView {
         return textView;
     }
 
-    private void populateTabStrip(ColorStateList textColorStateList) {
+    private void populateTabStrip(float tabTitleSize, ColorStateList textColorStateList) {
         final PagerAdapter adapter = mViewPager.getAdapter();
         final View.OnClickListener tabClickListener = new TabClickListener();
 
         for (int i = 0; i < adapter.getCount(); i++) {
             View tabView = null;
-            TextView tabTitleView = null;
+            AcnTextView tabTitleView = null;
 
             if (mTabViewLayoutId != 0) {
                 // If there is a custom tab view layout id set, try and inflate it
                 tabView = LayoutInflater.from(getContext()).inflate(mTabViewLayoutId, mTabStrip, false);
-                tabTitleView = (TextView) tabView.findViewById(mTabViewTextViewId);
+                tabTitleView = (AcnTextView) tabView.findViewById(mTabViewTextViewId);
             }
 
             if (tabView == null) {
                 tabView = createDefaultTabView(getContext());
             }
 
-            if (tabTitleView == null && TextView.class.isInstance(tabView)) {
-                tabTitleView = (TextView) tabView;
+            if (tabTitleView == null && AcnTextView.class.isInstance(tabView)) {
+                tabTitleView = (AcnTextView) tabView;
             }
 
             tabTitleView.setText(adapter.getPageTitle(i));
@@ -245,6 +246,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
             tabTitleView.setHorizontalFadingEdgeEnabled(true);
             tabTitleView.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/" + Config.appFont));
             tabTitleView.setTextColor(textColorStateList);
+            tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTitleSize);
 
             /*WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
             Display display = wm.getDefaultDisplay();

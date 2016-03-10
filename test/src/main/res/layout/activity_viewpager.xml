@@ -18,6 +18,7 @@
         app:dividerColor="@android:color/darker_gray"
         app:selectedTitleColor="@color/primaryDark"
         app:unselectedTitleColor="@android:color/darker_gray"
-        app:tabBackgroundColor="@color/primary" />
+        app:tabBackgroundColor="@color/primary"
+        app:tabTitleSize="16sp" />
 
 </LinearLayout>
