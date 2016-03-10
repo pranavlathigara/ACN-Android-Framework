@@ -72,6 +72,14 @@ public class MainActivity extends AcnActivity {
             }
         });
 
+        button_videoplayer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, VideoPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Subscribe
@@ -102,5 +110,8 @@ public class MainActivity extends AcnActivity {
 
     @Bind(R.id.button_viewpager)
     AcnButton button_viewpager;
+
+    @Bind(R.id.button_videoplayer)
+    AcnButton button_videoplayer;
 
 }

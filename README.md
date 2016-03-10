@@ -14,6 +14,7 @@ It also provides custom view classes with extra features added to default views 
     - [AcnViewPager](#acnviewpager)
     - [AcnImageGallery](#acnimagegallery)
     - [AcnImagePager](#acnimagepager)
+    - [AcnVideoView](#acnvideoview)
 3. [Util classes](#util)
     - [BusProvider](#busprovider)
     - [ImageClickHandler](#imageclickhandler)
@@ -141,6 +142,13 @@ The following classes can be found under `view` package:
     - `unselectedIndicatorSize` (dimension)
     - `indicatorBottomMargin` (dimension)
 - [Screenshot](/screenshots/AcnImagePager.jpg)
+
+#### <a name="acnvideoview"></a>AcnVideoView (extends JCVideoPlayer)
+- Can do anything that [Jiecao Video Player](https://github.com/lipangit/jiecaovideoplayer) does
+- Set video from URL using the following line of code:
+    - `acn_videoview.setVideo(videoURL, thumbnailURL, videoTitle, showTitle);`
+- You need to call `AcnVideoView.releaseAllVideos();` at `onPause()` of your Activity or Fragment
+- [Screenshot](/screenshots/AcnVideoView.jpg)
 
 
 
