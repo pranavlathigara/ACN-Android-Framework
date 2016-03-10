@@ -64,7 +64,7 @@ public class AcnImageGallery extends LinearLayout {
 
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
-        int widthInPx = Math.min(display.getHeight(), display.getWidth()); //ACCORDING TO MINIMUM WIDTH-ED SIDE
+        int widthInPx = display.getWidth();
         heightInPx = widthInPx / 3;
 
     }

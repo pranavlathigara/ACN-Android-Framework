@@ -27,7 +27,6 @@ public class ViewPagerFragment extends Fragment {
 
         acn_textview.setText(text);
 
-
         return rootView;
     }
 
