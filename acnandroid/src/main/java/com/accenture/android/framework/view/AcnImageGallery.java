@@ -4,13 +4,13 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.accenture.android.framework.R;
 import com.accenture.android.framework.util.ImageClickHandler;
+import com.thefinestartist.utils.content.TypedValueUtil;
+import com.thefinestartist.utils.service.WindowManagerUtil;
 
 import java.util.ArrayList;
 
@@ -50,8 +50,7 @@ public class AcnImageGallery extends LinearLayout {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImageGallery, 0, 0);
 
             try {
-                float fourDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
-                spacing = (int) a.getDimension(R.styleable.AcnImageGallery_spacing, fourDpInPixels);
+                spacing = (int) a.getDimension(R.styleable.AcnImageGallery_spacing, TypedValueUtil.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4));
 
                 columnCount = a.getInteger(R.styleable.AcnImageGallery_columnType, 2);
 
@@ -62,10 +61,7 @@ public class AcnImageGallery extends LinearLayout {
 
         this.setOrientation(VERTICAL);
 
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        int widthInPx = display.getWidth();
-        heightInPx = widthInPx / 3;
+        heightInPx = WindowManagerUtil.getDefaultDisplay().getWidth() / 3;
 
     }
 

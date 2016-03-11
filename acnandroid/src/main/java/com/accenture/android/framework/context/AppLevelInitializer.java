@@ -16,6 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;
+import com.thefinestartist.Base;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
@@ -41,6 +42,14 @@ class AppLevelInitializer {
         */
 
         Logger.i("Logger is initialized!");
+
+    }
+
+    public static void initBaseUtils(final Application application) {
+
+        Base.initialize(application);
+
+        Logger.i("BaseUtils is initialized!");
 
     }
 

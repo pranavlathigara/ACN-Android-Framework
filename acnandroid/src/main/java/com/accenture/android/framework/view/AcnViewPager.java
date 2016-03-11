@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import com.accenture.android.framework.R;
 import com.accenture.android.framework.view.adapter.ViewPagerAdapter;
 import com.accenture.android.framework.view.helper.SlidingTabLayout;
+import com.thefinestartist.utils.content.ResourcesUtil;
+import com.thefinestartist.utils.content.TypedValueUtil;
 
 import java.util.ArrayList;
 
@@ -62,22 +64,21 @@ public class AcnViewPager extends RelativeLayout {
 
             try {
                 //TAB TITLE SIZE
-                float fourteenSpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14, getResources().getDisplayMetrics());
-                tabTitleSize = a.getDimension(R.styleable.AcnViewPager_tabTitleSize, fourteenSpInPixels);
+                tabTitleSize = a.getDimension(R.styleable.AcnViewPager_tabTitleSize, TypedValueUtil.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14));
 
                 //TAB BACKGROUND COLOR
-                int tabBackgroundColor = a.getColor(R.styleable.AcnViewPager_tabBackgroundColor, getResources().getColor(android.R.color.white));
+                int tabBackgroundColor = a.getColor(R.styleable.AcnViewPager_tabBackgroundColor, ResourcesUtil.getColor(android.R.color.white));
                 slidingTabLayout.setBackgroundColor(tabBackgroundColor);
 
                 //INDICATOR COLOR
-                indicatorColor = a.getColor(R.styleable.AcnViewPager_indicatorColor, getResources().getColor(android.R.color.black));
+                indicatorColor = a.getColor(R.styleable.AcnViewPager_indicatorColor,ResourcesUtil.getColor(android.R.color.black));
 
                 //DIVIDER COLOR
-                dividerColor = a.getColor(R.styleable.AcnViewPager_dividerColor, getResources().getColor(android.R.color.darker_gray));
+                dividerColor = a.getColor(R.styleable.AcnViewPager_dividerColor, ResourcesUtil.getColor(android.R.color.darker_gray));
 
                 //TEXT COLOR
-                int selectedTitleColor = a.getColor(R.styleable.AcnViewPager_selectedTitleColor, getResources().getColor(android.R.color.black));
-                int unselectedTitleColor = a.getColor(R.styleable.AcnViewPager_unselectedTitleColor, getResources().getColor(android.R.color.darker_gray));
+                int selectedTitleColor = a.getColor(R.styleable.AcnViewPager_selectedTitleColor, ResourcesUtil.getColor(android.R.color.black));
+                int unselectedTitleColor = a.getColor(R.styleable.AcnViewPager_unselectedTitleColor, ResourcesUtil.getColor(android.R.color.darker_gray));
 
                 int[][] states = new int[][] {
                         new int[] {android.R.attr.state_selected},

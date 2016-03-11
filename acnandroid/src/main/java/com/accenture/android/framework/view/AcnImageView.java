@@ -14,6 +14,7 @@ import com.mingle.widget.LoadingView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.thefinestartist.utils.content.TypedValueUtil;
 
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
@@ -80,8 +81,7 @@ public class AcnImageView extends FrameLayout {
                     customGifEnabled = true;
                     try {
                         //GIF SIZE
-                        float eightyDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getResources().getDisplayMetrics());
-                        int gifSize = (int) a.getDimension(R.styleable.AcnImageView_gifSize, eightyDpInPixels);
+                        int gifSize = (int) a.getDimension(R.styleable.AcnImageView_gifSize, TypedValueUtil.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50));
                         gifImageView.getLayoutParams().width = gifSize;
 
                         GifDrawable gifFromAssets = new GifDrawable(context.getAssets(), gifSrc);
@@ -90,19 +90,6 @@ public class AcnImageView extends FrameLayout {
                         ex.printStackTrace();
                     }
                 }
-
-                //DOT COLOR
-                /*int dotColor = a.getColor(R.styleable.AcnImageView_dotColor, getResources().getColor(android.R.color.darker_gray));
-                loadingView.setDotColor(dotColor);
-
-                //DOT COUNT
-                int dotCount = a.getInteger(R.styleable.AcnImageView_dotCount, 3);
-                loadingView.setNumberOfDots(dotCount);
-
-                //DOT RADIUS
-                float fiveDpInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
-                float dotRadius = a.getDimension(R.styleable.AcnImageView_dotRadius, fiveDpInPixels);
-                loadingView.setDotRadius(dotRadius);*/
 
             } finally {
                 a.recycle();

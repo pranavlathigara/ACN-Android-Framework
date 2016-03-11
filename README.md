@@ -37,6 +37,7 @@ The following classes can be found under `context` package:
         - e.g., 300 (in millis)
 - Initializes the following libraries:
     - [Logger](https://github.com/orhanobut/logger)
+    - [AndroidBaseUtils](https://github.com/TheFinestArtist/AndroidBaseUtils)
     - [EasyPreferences](https://github.com/Pixplicity/EasyPreferences)
     - [Iconify](https://github.com/JoanZapata/android-iconify) (required to support FontAwesome icons inside **AcnTextView**)
     - [Calligraphy](https://github.com/chrisjenx/Calligraphy)
@@ -194,8 +195,11 @@ The following classes can be found under `util` package:
 1. Add `acnandroid` module to your project
 2. Inside module-level `build.gradle` file (that belongs to your module), add the following line under `dependencies` tag:
     - `compile project(':acnandroid')`
-3. Inside project-level `build.gradle` file, add the following line under `allprojects/repositories` tag:
-    - `maven { url "https://jitpack.io" }`
+3. Inside project-level `build.gradle` file...
+    - add the following line under `allprojects/repositories` tag:
+        - `maven { url "https://jitpack.io" }`
+    - add the following line under `buildscript/dependencies` tag:
+        - `classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'`
 4. Inside `AndroidManifest.xml` file of your module, add the following lines under `Application` tag:
     - `tools:replace="theme, label"`
     - `android:theme="@style/AcnTheme"`
