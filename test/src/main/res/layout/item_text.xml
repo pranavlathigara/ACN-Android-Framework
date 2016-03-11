@@ -9,6 +9,7 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/primaryDark"
         android:padding="10dp" />
 
 </LinearLayout>

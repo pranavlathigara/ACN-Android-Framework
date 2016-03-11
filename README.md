@@ -164,6 +164,7 @@ The following classes can be found under `view` package:
             - Footer view to be displayed while loading new items
 - Add new item to list as follows:
     - `acn_infinitelistview.addNewItem(item);`
+- [Screenshot](/screenshots/AcnInfiniteListView.jpg)
 
 
 

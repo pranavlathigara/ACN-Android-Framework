@@ -33,7 +33,7 @@ public class InfiniteListActivity extends AcnActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        View loadingView = getLayoutInflater().inflate(R.layout.item_progressbar, null);
+        View loadingView = getLayoutInflater().inflate(R.layout.item_loading, null);
 
         ArrayList<String> itemList = new ArrayList<>();
         int maxNumOfItems = 500;
