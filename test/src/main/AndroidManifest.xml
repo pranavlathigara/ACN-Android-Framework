@@ -43,6 +43,9 @@
         <activity android:name=".activity.VideoPlayerActivity">
         </activity>
 
+        <activity android:name=".activity.InfiniteListActivity">
+        </activity>
+
     </application>
 
 </manifest>

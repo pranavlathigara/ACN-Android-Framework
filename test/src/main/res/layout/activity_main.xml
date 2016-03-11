@@ -167,6 +167,27 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_videoplayer"/>
 
+            <com.accenture.android.framework.view.AcnButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                fancy:fb_borderColor="@color/primary"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_defaultColor="@color/primaryDark"
+                fancy:fb_focusColor="@color/focus"
+                fancy:fb_fontIconResource="&#xf17b;"
+                fancy:fb_fontIconSize="25sp"
+                fancy:fb_iconPosition="left"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="Infinite List"
+                fancy:fb_textSize="20sp"
+                fancy:fb_textColor="@color/primary"
+                android:id="@+id/button_infinitelist"/>
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

@@ -15,9 +15,11 @@ It also provides custom view classes with extra features added to default views 
     - [AcnImageGallery](#acnimagegallery)
     - [AcnImagePager](#acnimagepager)
     - [AcnVideoView](#acnvideoview)
+    - [AcnInfiniteListView](#acninfinitelistview)
 3. [Util classes](#util)
     - [BusProvider](#busprovider)
     - [ImageClickHandler](#imageclickhandler)
+    - [InfiniteListAdapter](#infinitelistadapter)
 4. [How to use this framework](#howtouse)
 
 
@@ -145,10 +147,23 @@ The following classes can be found under `view` package:
 
 #### <a name="acnvideoview"></a>AcnVideoView (extends JCVideoPlayer)
 - Can do anything that [Jiecao Video Player](https://github.com/lipangit/jiecaovideoplayer) does
-- Set video from URL using the following line of code:
+- Supports loading video & thumbnail image from URL and configuring video title
     - `acn_videoview.setVideo(videoURL, thumbnailURL, videoTitle, showTitle);`
 - You need to call `AcnVideoView.releaseAllVideos();` at `onPause()` of your Activity or Fragment
 - [Screenshot](/screenshots/AcnVideoView.jpg)
+
+#### <a name="acninfinitelistview"></a>AcnInfiniteListView (extends ListView)
+- Initialize it as follows:
+    - `acn_infinitelistview.init(adapter, maxNumOfItems, loadingView);`
+        - `adapter` (**InfiniteListAdapter**)
+            - Extend it to create your own adapter
+                - Override its `onNewLoadRequired()` method to load new items when required
+        - `maxNumOfItems` (int)
+            - To make listview prevent loading more when item count reaches this number
+        - `loadingView` (View)
+            - Footer view to be displayed while loading new items
+- Add new item to list as follows:
+    - `acn_infinitelistview.addNewItem(item);`
 
 
 
@@ -163,6 +178,14 @@ The following classes can be found under `util` package:
 
 #### <a name="imageclickhandler"></a>ImageClickHandler (abstract class)
 - Includes abstract method `onImageClicked(int position, String imageURL)`
+
+#### <a name="infinitelistadapter"></a>InfiniteListAdapter (abstract class, extends ArrayAdapter)
+- Constructor takes the following params:
+    - `activity` (Activity)
+    - `layoutRes` (int)
+        - e.g., `R.layout.item_text`
+    - `itemList` (ArrayList)
+- Includes abstract method `onNewLoadRequired()`
 
 
 

@@ -80,6 +80,14 @@ public class MainActivity extends AcnActivity {
             }
         });
 
+        button_infinitelist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InfiniteListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Subscribe
@@ -113,5 +121,8 @@ public class MainActivity extends AcnActivity {
 
     @Bind(R.id.button_videoplayer)
     AcnButton button_videoplayer;
+
+    @Bind(R.id.button_infinitelist)
+    AcnButton button_infinitelist;
 
 }
