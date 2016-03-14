@@ -17,7 +17,7 @@ import butterknife.Bind;
 public class MainActivity extends AcnActivity {
 
     public MainActivity(){
-        super(R.layout.activity_main, R.id.toolbar, null, R.color.statusBar);
+        super(R.layout.activity_main, R.id.toolbar, R.id.back_button, false, R.color.statusBar);
     }
 
     @Override

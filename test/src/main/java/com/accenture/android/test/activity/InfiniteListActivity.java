@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.accenture.android.framework.context.AcnActivity;
 import com.accenture.android.framework.view.AcnInfiniteListView;
-import com.accenture.android.test.MyAdapter;
 import com.accenture.android.test.R;
+import com.accenture.android.test.adapter.MyInfiniteListAdapter;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
 import com.pixplicity.easyprefs.library.Prefs;
@@ -26,7 +26,7 @@ public class InfiniteListActivity extends AcnActivity {
     private int itemCount = 25;
 
     public InfiniteListActivity(){
-        super(R.layout.activity_infinitescrolling, R.id.toolbar, R.id.back_button, R.color.statusBar);
+        super(R.layout.activity_infinitescrolling, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class InfiniteListActivity extends AcnActivity {
         ArrayList<String> itemList = new ArrayList<>();
         int maxNumOfItems = 500;
 
-        MyAdapter adapter = new MyAdapter(this, R.layout.item_text, itemList);
+        MyInfiniteListAdapter adapter = new MyInfiniteListAdapter(this, R.layout.item_text, itemList);
 
         acn_infinitelistview.init(adapter, maxNumOfItems, loadingView);
 

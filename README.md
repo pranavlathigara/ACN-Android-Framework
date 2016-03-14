@@ -53,6 +53,7 @@ The following classes can be found under `context` package:
         - e.g., `R.id.toolbar`
     - `backButtonRes` (Integer -- nullable)
         - e.g., `R.id.back_button`
+    - `backButtonVisible` (boolean)
     - `statusBarColor` (int)
         - e.g., `R.color.statusBar`
 - Initializes the following libraries:

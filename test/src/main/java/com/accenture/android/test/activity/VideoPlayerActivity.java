@@ -18,7 +18,7 @@ import butterknife.Bind;
 public class VideoPlayerActivity extends AcnActivity {
 
     public VideoPlayerActivity(){
-        super(R.layout.activity_videoplayer, R.id.toolbar, R.id.back_button, R.color.statusBar);
+        super(R.layout.activity_videoplayer, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
 
     @Override

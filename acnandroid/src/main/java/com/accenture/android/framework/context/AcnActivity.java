@@ -20,13 +20,15 @@ public abstract class AcnActivity extends AppCompatActivity {
     private int layoutRes;
     private int toolbarRes;
     private Integer backButtonRes = null;
+    private boolean backButtonVisible;
     private int statusBarColor;
 
-    public AcnActivity(int layoutRes, int toolbarRes, Integer backButtonRes, int statusBarColor){
+    public AcnActivity(int layoutRes, int toolbarRes, Integer backButtonRes, boolean backButtonVisible, int statusBarColor){
 
         this.layoutRes = layoutRes;
         this.toolbarRes = toolbarRes;
         this.backButtonRes = backButtonRes;
+        this.backButtonVisible = backButtonVisible;
         this.statusBarColor = statusBarColor;
 
     }
@@ -48,15 +50,21 @@ public abstract class AcnActivity extends AppCompatActivity {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
             getWindow().setStatusBarColor(getResources().getColor(this.statusBarColor));
 
-        //BACK BUTTON ONCLICK
+        //BACK BUTTON
         if(backButtonRes != null){
             AcnButton back_button = (AcnButton) findViewById(backButtonRes);
-            back_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onBackPressed();
-                }
-            });
+            if(backButtonVisible) {
+                back_button.setVisibility(View.VISIBLE);
+                back_button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onBackPressed();
+                    }
+                });
+            }
+            else{
+                back_button.setVisibility(View.GONE);
+            }
         }
 
     }

@@ -2,26 +2,30 @@
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
+    android:layout_height="54dp"
     android:gravity="center"
     android:elevation="4dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetEnd="0dp"
     android:background="@color/primaryDark">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <com.accenture.android.framework.view.AcnButton
-            android:layout_width="60dp"
+            android:layout_width="54dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             fancy:fb_defaultColor="@android:color/transparent"
             fancy:fb_focusColor="@color/focus"
             fancy:fb_fontIconResource="&#xf060;"
-            fancy:fb_fontIconSize="25sp"
+            fancy:fb_fontIconSize="20sp"
             fancy:fb_textColor="@color/primary"
             android:id="@+id/back_button"/>
 

@@ -15,7 +15,7 @@ import butterknife.Bind;
 public class ZoomableImageActivity extends AcnActivity {
 
     public ZoomableImageActivity(){
-        super(R.layout.activity_image_zoomable, R.id.toolbar, R.id.back_button, R.color.statusBar);
+        super(R.layout.activity_image_zoomable, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
 
     @Override

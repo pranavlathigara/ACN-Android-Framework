@@ -17,7 +17,7 @@ import butterknife.Bind;
 public class ImagePagerActivity extends AcnActivity {
 
     public ImagePagerActivity(){
-        super(R.layout.activity_imagepager, R.id.toolbar, R.id.back_button, R.color.statusBar);
+        super(R.layout.activity_imagepager, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
 
     @Override

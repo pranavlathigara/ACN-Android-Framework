@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_secondary"/>
+        layout="@layout/toolbar"/>
 
     <com.accenture.android.framework.view.AcnImagePager
         android:id="@+id/acn_imagepager"

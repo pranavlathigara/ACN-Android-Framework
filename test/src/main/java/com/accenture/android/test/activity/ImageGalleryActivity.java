@@ -20,7 +20,7 @@ import butterknife.Bind;
 public class ImageGalleryActivity extends AcnActivity {
 
     public ImageGalleryActivity(){
-        super(R.layout.activity_imagegallery, R.id.toolbar, R.id.back_button, R.color.statusBar);
+        super(R.layout.activity_imagegallery, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
 
     @Override
