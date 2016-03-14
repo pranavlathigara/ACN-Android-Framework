@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.accenture.android.framework.R;
 import com.accenture.android.framework.util.ImageClickHandler;
 import com.thefinestartist.utils.content.TypedValueUtil;
-import com.thefinestartist.utils.service.WindowManagerUtil;
+import com.thefinestartist.utils.ui.DisplayUtil;
 
 import java.util.ArrayList;
 
@@ -44,7 +44,10 @@ public class AcnImageGallery extends LinearLayout {
     private void init(Context context, AttributeSet attrs) {
         View view = inflate(context, R.layout.acn_imagegallery, this);
 
+        this.setOrientation(VERTICAL);
+
         this.context = context;
+        this.heightInPx = DisplayUtil.getWidth() / 3;
 
         if(attrs != null) {
             TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.AcnImageGallery, 0, 0);
@@ -58,10 +61,6 @@ public class AcnImageGallery extends LinearLayout {
                 a.recycle();
             }
         }
-
-        this.setOrientation(VERTICAL);
-
-        heightInPx = WindowManagerUtil.getDefaultDisplay().getWidth() / 3;
 
     }
 

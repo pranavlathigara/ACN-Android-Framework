@@ -36,6 +36,13 @@
     @com.squareup.otto.Produce public *;
 }
 
+#baseutils : extrasbinder
+-keep class com.thefinestartist.annotations.** { *; }
+-keep class **$$ExtraBinder { *; }
+-keepclasseswithmembernames class * {
+    @com.thefinestartist.annotations.Extra <fields>;
+}
+
 #jcvideoplayer
 ##Eventbus
 -keepclassmembers class ** {
