@@ -10,8 +10,8 @@ import com.accenture.android.framework.view.AcnImageGallery;
 import com.accenture.android.test.R;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
 import com.orhanobut.logger.Logger;
-import com.pixplicity.easyprefs.library.Prefs;
 import com.squareup.otto.Subscribe;
+import com.thefinestartist.utils.etc.PreferenceUtil;
 
 import java.util.ArrayList;
 
@@ -66,7 +66,7 @@ public class ImageGalleryActivity extends AcnActivity {
 
         Logger.i("Internet status: " + status.name());
 
-        Prefs.putString("internetStatus", status.name());
+        PreferenceUtil.put("internetStatus", status.name());
         Logger.i("Internet status is put to shared prefs!");
 
     }

@@ -38,7 +38,6 @@ The following classes can be found under `context` package:
 - Initializes the following libraries:
     - [Logger](https://github.com/orhanobut/logger)
     - [AndroidBaseUtils](https://github.com/TheFinestArtist/AndroidBaseUtils)
-    - [EasyPreferences](https://github.com/Pixplicity/EasyPreferences)
     - [Iconify](https://github.com/JoanZapata/android-iconify) (required to support FontAwesome icons inside **AcnTextView**)
     - [Calligraphy](https://github.com/chrisjenx/Calligraphy)
     - [Universal Image Loader](https://github.com/nostra13/Android-Universal-Image-Loader)

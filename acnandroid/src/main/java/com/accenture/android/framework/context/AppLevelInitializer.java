@@ -1,7 +1,6 @@
 package com.accenture.android.framework.context;
 
 import android.app.Application;
-import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import com.accenture.android.framework.R;
@@ -15,7 +14,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.orhanobut.logger.Logger;
-import com.pixplicity.easyprefs.library.Prefs;
 import com.thefinestartist.Base;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -53,7 +51,7 @@ class AppLevelInitializer {
 
     }
 
-    public static void initSharedPrefs(final Application application) {
+    /*public static void initSharedPrefs(final Application application) {
 
         new Prefs.Builder()
                 .setContext(application)
@@ -64,7 +62,7 @@ class AppLevelInitializer {
 
         Logger.i("Prefs is initialized!");
 
-    }
+    }*/
 
     public static void initIconify() {
 

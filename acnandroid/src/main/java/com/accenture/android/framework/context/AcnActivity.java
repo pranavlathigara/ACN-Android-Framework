@@ -1,7 +1,6 @@
 package com.accenture.android.framework.context;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.view.View;
 import com.accenture.android.framework.util.BusProvider;
 import com.accenture.android.framework.view.AcnButton;
 import com.github.pwittchen.reactivenetwork.library.ConnectivityStatus;
+import com.thefinestartist.utils.etc.APILevel;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -47,7 +47,7 @@ public abstract class AcnActivity extends AppCompatActivity {
         ActivityLevelInitializer.initButterKnife(this);
 
         //CHANGE STATUS BAR COLOR
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        if(APILevel.requireLollipop())
             getWindow().setStatusBarColor(getResources().getColor(this.statusBarColor));
 
         //BACK BUTTON

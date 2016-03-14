@@ -35,7 +35,6 @@ public abstract class AcnApplication extends Application {
 
         AppLevelInitializer.initLogger(Config.loggerTag);
         AppLevelInitializer.initBaseUtils(this);
-        AppLevelInitializer.initSharedPrefs(this);
         AppLevelInitializer.initIconify();
         AppLevelInitializer.initAppFont(Config.appFont);
         AppLevelInitializer.initImageLoader(this, Config.imageFadeInDuration);
