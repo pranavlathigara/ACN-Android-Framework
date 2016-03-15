@@ -21,7 +21,7 @@
             android:orientation="vertical"
             android:gravity="center|top">
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -39,7 +39,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_view_test"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -57,7 +57,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_zoomable_image"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -75,7 +75,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_imagegallery"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -93,7 +93,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_imagepager"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -111,7 +111,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_imagepager_zoomable"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -129,7 +129,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_viewpager"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -147,7 +147,7 @@
                 fancy:fb_textColor="@color/primary"
                 android:id="@+id/button_videoplayer"/>
 
-            <com.accenture.android.framework.view.AcnButton
+            <com.acnandroid.framework.view.AcnButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"

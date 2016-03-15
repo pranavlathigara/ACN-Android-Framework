@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <com.accenture.android.framework.view.AcnViewPager
+    <com.acnandroid.framework.view.AcnViewPager
         android:id="@+id/acn_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

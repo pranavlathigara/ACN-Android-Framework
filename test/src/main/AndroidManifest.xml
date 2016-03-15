@@ -2,10 +2,10 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.accenture.android.test">
+    package="com.acnandroid.test">
 
     <application
-        android:name=".BaseApplication"
+        android:name="com.acnandroid.test.BaseApplication"
         tools:replace="theme, label"
         android:allowBackup="true"
         android:largeHeap="true"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AcnTheme">
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.acnandroid.test.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,28 +22,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ImageActivity">
+        <activity android:name="com.acnandroid.test.activity.ImageActivity">
         </activity>
 
-        <activity android:name=".activity.ZoomableImageActivity">
+        <activity android:name="com.acnandroid.test.activity.ZoomableImageActivity">
         </activity>
 
-        <activity android:name=".activity.ImageGalleryActivity">
+        <activity android:name="com.acnandroid.test.activity.ImageGalleryActivity">
         </activity>
 
-        <activity android:name=".activity.ImagePagerActivity">
+        <activity android:name="com.acnandroid.test.activity.ImagePagerActivity">
         </activity>
 
-        <activity android:name=".activity.ZoomableImagePagerActivity">
+        <activity android:name="com.acnandroid.test.activity.ZoomableImagePagerActivity">
         </activity>
 
-        <activity android:name=".activity.ViewPagerActivity">
+        <activity android:name="com.acnandroid.test.activity.ViewPagerActivity">
         </activity>
 
-        <activity android:name=".activity.VideoPlayerActivity">
+        <activity android:name="com.acnandroid.test.activity.VideoPlayerActivity">
         </activity>
 
-        <activity android:name=".activity.InfiniteListActivity">
+        <activity android:name="com.acnandroid.test.activity.InfiniteListActivity">
         </activity>
 
     </application>

@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <com.accenture.android.framework.view.AcnVideoView
+        <com.acnandroid.framework.view.AcnVideoView
             android:id="@+id/acn_videoview"
             android:layout_width="match_parent"
             android:layout_height="250dp"

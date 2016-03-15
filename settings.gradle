@@ -1,1 +1,1 @@
-include ':test', ':acnandroid'
+include ':test', ':acn-android-framework'
