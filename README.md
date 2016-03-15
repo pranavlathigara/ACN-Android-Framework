@@ -1,6 +1,5 @@
 # ACN Android Framework
 [![Build Status](https://travis-ci.org/ugurcany/ACN-Android-Framework.svg?branch=master)](https://travis-ci.org/ugurcany/ACN-Android-Framework)
-[![Coverage Status](https://coveralls.io/repos/github/ugurcany/ACN-Android-Framework/badge.svg?branch=master)](https://coveralls.io/github/ugurcany/ACN-Android-Framework?branch=master)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
