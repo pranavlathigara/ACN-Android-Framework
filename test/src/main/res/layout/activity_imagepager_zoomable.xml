@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <com.acnandroid.framework.view.AcnImagePager
+    <acn.android.framework.view.AcnImagePager
         android:id="@+id/acn_imagepager_zoomable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

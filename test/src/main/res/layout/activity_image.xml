@@ -21,7 +21,7 @@
             android:orientation="vertical"
             android:gravity="center|top">
 
-            <com.acnandroid.framework.view.AcnTextView
+            <acn.android.framework.view.AcnTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -30,7 +30,7 @@
                 android:textColor="@color/primaryDark"
                 android:textSize="20sp" />
 
-            <com.acnandroid.framework.view.AcnImageView
+            <acn.android.framework.view.AcnImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
@@ -38,7 +38,7 @@
                 android:gravity="center"
                 android:id="@+id/acn_imageview_url" />
 
-            <com.acnandroid.framework.view.AcnTextView
+            <acn.android.framework.view.AcnTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -47,7 +47,7 @@
                 android:textColor="@color/primaryDark"
                 android:textSize="20sp" />
 
-            <com.acnandroid.framework.view.AcnImageView
+            <acn.android.framework.view.AcnImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
@@ -55,7 +55,7 @@
                 android:gravity="center"
                 android:id="@+id/acn_imageview_drawable" />
 
-            <com.acnandroid.framework.view.AcnTextView
+            <acn.android.framework.view.AcnTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -64,7 +64,7 @@
                 android:textColor="@color/primaryDark"
                 android:textSize="20sp" />
 
-            <com.acnandroid.framework.view.AcnImageView
+            <acn.android.framework.view.AcnImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="10dp"
@@ -72,7 +72,7 @@
                 android:gravity="center"
                 android:id="@+id/acn_imageview_asset" />
 
-            <com.acnandroid.framework.view.AcnTextView
+            <acn.android.framework.view.AcnTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -81,7 +81,7 @@
                 android:textColor="@color/primaryDark"
                 android:textSize="13sp" />
 
-            <com.acnandroid.framework.view.AcnImageView
+            <acn.android.framework.view.AcnImageView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="10dp"

@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_centerInParent="true" />
 
-    <com.acnandroid.framework.view.helper.HackyViewPager
+    <acn.android.framework.view.helper.HackyViewPager
         android:id="@+id/hackyViewPager"
         android:layout_centerInParent="true"
         android:layout_height="match_parent"

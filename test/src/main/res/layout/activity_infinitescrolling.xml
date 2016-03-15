@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <com.acnandroid.framework.view.AcnInfiniteListView
+    <acn.android.framework.view.AcnInfiniteListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/acn_infinitelistview"
