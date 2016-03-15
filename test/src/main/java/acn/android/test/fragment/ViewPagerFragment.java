@@ -11,6 +11,7 @@ import com.thefinestartist.binders.ExtrasBinder;
 
 import acn.android.framework.view.AcnTextView;
 import acn.android.test.R;
+import acn.android.test.activity.ViewPagerActivity;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -19,7 +20,7 @@ import butterknife.ButterKnife;
  */
 public class ViewPagerFragment extends Fragment {
 
-    @Extra("TEXT")
+    @Extra(ViewPagerActivity.TEXT)
     String text;
 
     @Override

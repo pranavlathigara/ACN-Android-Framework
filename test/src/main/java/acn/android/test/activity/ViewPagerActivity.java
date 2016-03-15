@@ -18,6 +18,8 @@ import butterknife.Bind;
 
 public class ViewPagerActivity extends AcnActivity {
 
+    public static final String TEXT = "TEXT";
+
     public ViewPagerActivity(){
         super(R.layout.activity_viewpager, R.id.toolbar, R.id.back_button, true, R.color.statusBar);
     }
@@ -33,7 +35,7 @@ public class ViewPagerActivity extends AcnActivity {
             tabTitles.add("{fa-android} Tab " + i);
 
             Bundle bundle = new Bundle();
-            bundle.putString("text", "TAB " + i);
+            bundle.putString(ViewPagerActivity.TEXT, "TAB " + i);
 
             ViewPagerFragment fragment = new ViewPagerFragment();
             fragment.setArguments(bundle);
