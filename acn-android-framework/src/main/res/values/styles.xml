@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="AcnTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>

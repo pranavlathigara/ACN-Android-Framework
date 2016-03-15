@@ -206,9 +206,6 @@ The following classes can be found under `util` package:
         - `maven { url "https://jitpack.io" }`
     - add the following line under `buildscript/dependencies` tag:
         - `classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'`
-4. Inside `AndroidManifest.xml` file of your module, add the following lines under `Application` tag:
-    - `tools:replace="theme, label"`
-    - `android:theme="@style/AcnTheme"`
 
 See `test` module for sample usage.
 
