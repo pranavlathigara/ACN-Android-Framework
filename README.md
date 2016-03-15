@@ -1,6 +1,7 @@
 # ACN Android Framework
 [![Build Status](https://travis-ci.org/ugurcany/ACN-Android-Framework.svg?branch=master)](https://travis-ci.org/ugurcany/ACN-Android-Framework)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 ACN Android Framework is being developed to reduce application development effort and time by encapsulating the initialization and configuration of many widely-used third-party libraries inside its custom Application and Activity classes.
 
