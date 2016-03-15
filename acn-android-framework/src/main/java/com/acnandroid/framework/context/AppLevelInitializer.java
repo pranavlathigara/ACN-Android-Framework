@@ -14,6 +14,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.orhanobut.logger.Logger;
+import com.squareup.leakcanary.LeakCanary;
 import com.thefinestartist.Base;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -27,7 +28,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 class AppLevelInitializer {
 
     public static void initLogger(String loggerTag) {
-
         if(TextUtils.isEmpty(loggerTag))
             return;
 
@@ -38,42 +38,25 @@ class AppLevelInitializer {
                 .methodOffset(2)                // default 0
                 .logTool(new AndroidLogTool()); // custom log tool, optional
         */
-
         Logger.i("Logger is initialized!");
-
     }
 
     public static void initBaseUtils(final Application application) {
-
         Base.initialize(application);
-
         Logger.i("BaseUtils is initialized!");
-
     }
 
-    /*public static void initSharedPrefs(final Application application) {
-
-        new Prefs.Builder()
-                .setContext(application)
-                .setMode(ContextWrapper.MODE_PRIVATE)
-                .setPrefsName(application.getPackageName())
-                .setUseDefaultSharedPreference(true)
-                .build();
-
-        Logger.i("Prefs is initialized!");
-
-    }*/
+    public static void initLeakCanary(final Application application) {
+        LeakCanary.install(application);
+        Logger.i("LeakCanary is initialized!");
+    }
 
     public static void initIconify() {
-
         Iconify.with(new FontAwesomeModule());
-
         Logger.i("Iconify is initialized!");
-
     }
 
-    public static void initAppFont(String appFont) {
-
+    public static void initCalligraphy(String appFont) {
         if(TextUtils.isEmpty(appFont))
             return;
 
@@ -82,12 +65,10 @@ class AppLevelInitializer {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
 
-        Logger.i("Default font is set!");
-
+        Logger.i("Calligraphy is initialized!");
     }
 
     public static void initImageLoader(final Application application, int imageFadeInDuration) {
-
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .displayer(new FadeInBitmapDisplayer(imageFadeInDuration))
                 .resetViewBeforeLoading(true)
@@ -117,13 +98,10 @@ class AppLevelInitializer {
                 .build();
 
         ImageLoader.getInstance().init(config);
-
         Logger.i("Image loader is initialized!");
-
     }
 
     public static void initInternetListener(final Application application) {
-
         new ReactiveNetwork().observeConnectivity(application)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -136,7 +114,6 @@ class AppLevelInitializer {
                 });
 
         Logger.i("Internet listener is initialized!");
-
     }
 
 }

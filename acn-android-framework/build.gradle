@@ -54,4 +54,7 @@ dependencies {
     compile 'fm.jiecao:jiecaovideoplayer:1.7'
     compile 'com.thefinestartist:utils:0.8.5'
     apt 'com.thefinestartist:compilers:0.8.5'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
 }

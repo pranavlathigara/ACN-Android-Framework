@@ -42,6 +42,7 @@ The following classes can be found under `context` package:
 - Initializes the following libraries:
     - [Logger](https://github.com/orhanobut/logger)
     - [AndroidBaseUtils](https://github.com/TheFinestArtist/AndroidBaseUtils)
+    - [LeakCanary](https://github.com/square/leakcanary)
     - [Iconify](https://github.com/JoanZapata/android-iconify) (required to support FontAwesome icons inside **AcnTextView**)
     - [Calligraphy](https://github.com/chrisjenx/Calligraphy)
     - [Universal Image Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
@@ -63,6 +64,7 @@ The following classes can be found under `context` package:
     - [Butter Knife](http://jakewharton.github.io/butterknife/)
 - Registers/unregisters [Otto Event Bus](http://square.github.io/otto/) at `onResume()`/`onPause()`
 - Includes abstract method `onInternetStatusChanged(ConnectivityStatus status)`
+    - Override it to catch the Internet connection status changes
     - While overriding, add `@Subscribe` before the method
 
 
