@@ -20,14 +20,17 @@ import butterknife.ButterKnife;
  */
 public class ViewPagerFragment extends Fragment {
 
-    @Extra(ViewPagerActivity.TEXT)
-    String text;
+    /*@Extra(ViewPagerActivity.TEXT)
+    String text;*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_viewpager, container, false);
         ButterKnife.bind(this, rootView);
-        ExtrasBinder.bind(this);
+        //ExtrasBinder.bind(this);
+
+        Bundle bundle = getArguments();
+        String text = bundle.getString(ViewPagerActivity.TEXT);
 
         acn_textview.setText(text);
 

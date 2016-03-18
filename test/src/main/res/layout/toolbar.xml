@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/actionBarSize"
@@ -22,11 +21,11 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            fancy:fb_defaultColor="@android:color/transparent"
-            fancy:fb_focusColor="@color/focus"
-            fancy:fb_fontIconResource="&#xf053;"
-            fancy:fb_fontIconSize="20sp"
-            fancy:fb_textColor="@color/primary"
+            app:fb_defaultColor="@android:color/transparent"
+            app:fb_focusColor="@color/focus"
+            app:fb_fontIconResource="&#xf053;"
+            app:fb_fontIconSize="20sp"
+            app:fb_textColor="@color/primary"
             android:id="@+id/back_button" />
 
         <TextView
